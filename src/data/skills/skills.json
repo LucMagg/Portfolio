@@ -1,0 +1,53 @@
+[
+  {
+    "name": "front",
+    "stacks": [
+      {
+        "name": "JavaScript",
+        "pic": "JavaScript.png"
+      },
+      {
+        "name": "TypeScript",
+        "pic": "Typescript.png"
+      },
+      {
+        "name": "React",
+        "pic": "React.png"
+      }
+    ]
+  },
+  {
+    "name": "back",
+    "stacks": [
+      {
+        "name": "Node",
+        "pic": "Node.png"
+      },
+      {
+        "name": "Python",
+        "pic": "Python.png"
+      },
+      {
+        "name": "MongoDB",
+        "pic": "mongoDB.png"
+      }      
+    ]
+  },
+  {
+    "name": "tools",
+    "stacks": [
+      {
+        "name": "Github",
+        "pic": "GitHub.png"
+      },
+      {
+        "name": "VScode",
+        "pic": "VScode.png"
+      },
+      {
+        "name": "Postman",
+        "pic": "postman.png"
+      }
+    ]
+  }
+]

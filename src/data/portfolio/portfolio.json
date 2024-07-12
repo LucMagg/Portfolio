@@ -1,0 +1,50 @@
+[
+  {
+    "id": "1",
+    "majorProject": true,
+    "type": "frontend",
+    "title": "Kasa",
+    "pic": "kasa.jpg",
+    "fr": {
+      "shortDescription": "Frontend d’un site fictif de location d’hébergement",
+      "another": "blabla"
+    },
+    "en": {
+      "shortDescription": "Frontend of a fictitious accommodation rental site",
+      "another": "blabla"
+    },
+    "stacks": [ "React", "React-router", "Sass" ]
+  },
+  {
+    "id": "2",
+    "majorProject": true,
+    "type": "backend",
+    "title": "Mon Vieux Grimoire",
+    "pic": "mon vieux grimoire.jpg",
+    "fr": {
+      "shortDescription": "Backend d’un site fictif de notation de livres",
+      "another": "blabla"
+    },
+    "en": {
+      "shortDescription": "Backend of a fictitious book rating site",
+      "another": "blabla"
+    },
+    "stacks": [ "Node", "Express", "MongoDB" ]
+  },
+  {
+    "id": "3",
+    "majorProject": false,
+    "type": "frontend",
+    "title": "ÀÉéà",
+    "pic": "",
+    "fr": {
+      "shortDescription": "Bot pour Discord",
+      "another": "blabla"
+    },
+    "en": {
+      "shortDescription": "Discord bot",
+      "another": "blabla"
+    },
+    "stacks": [ "Python", "Discord" ]
+  }
+]
