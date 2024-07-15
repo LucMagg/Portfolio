@@ -13,8 +13,8 @@ export default function PortfolioDesktopCard ( { item } : {item: itemTypes} ) {
 
   return (
     <PortfolioCardWrapper $isFocused={ isFocused }>
-      <PortfolioCardLink to={`/projects/${contractStr(item.title)}`} onFocus={() => setIsFocused(true)} onBlur= {() => setIsFocused(false)}>
-        <PortfolioCardPic src={ `./images/${item.pic}` } alt= { item.title } />
+      <PortfolioCardLink to={ `/projects/${contractStr(item.title)}` } onFocus={ () => setIsFocused(true) } onBlur= { () => setIsFocused(false) }>
+        <PortfolioCardPic src={ `./images/${item.title}/${item.pics[0]}` } alt= { item.title } />
         <DescriptionOnHover>
           <DescriptionWrapper>
             <DescriptionTitle>{ item.title }</DescriptionTitle>
@@ -24,7 +24,7 @@ export default function PortfolioDesktopCard ( { item } : {item: itemTypes} ) {
                 return <StackWrapper key={ stack }>{ stack }</StackWrapper>
               })}
             </DescriptionStackWrapper>
-            <LearnMore>{t('section3.learnMore')}</LearnMore>
+            <LearnMore>{ t('section3.learnMore') }</LearnMore>
           </DescriptionWrapper>
         </DescriptionOnHover>
       </PortfolioCardLink>

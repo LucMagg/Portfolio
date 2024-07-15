@@ -28,7 +28,7 @@ export const PortfolioCardLink = styled(Link)`
 export const PortfolioCardPic = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
   background-color: ${(props) => props.theme.componentBackGroundColor};
 `

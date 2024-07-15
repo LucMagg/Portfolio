@@ -4,7 +4,7 @@
     "majorProject": true,
     "type": "frontend",
     "title": "Kasa",
-    "pic": "kasa.jpg",
+    "pics": ["Kasa_landing_page.jpg","Kasa_about_page.jpg","Kasa_about_page_mobile.jpg","Kasa_error_page.jpg","Kasa_error_page_mobile.jpg","Kasa_landing_page_mobile.jpg","Kasa_rental_page.jpg","Kasa_rental_page_mobile.jpg"],
     "fr": {
       "shortDescription": "Frontend d’un site fictif de location d’hébergement",
       "another": "blabla"
@@ -20,7 +20,7 @@
     "majorProject": true,
     "type": "backend",
     "title": "Mon Vieux Grimoire",
-    "pic": "mon vieux grimoire.jpg",
+    "pics": ["Mon_vieux_grimoire_Postman_routes.jpg","Mon_vieux_grimoire_Postman_run.jpg","Mon_vieux_grimoire_MongoDB.jpg","Mon_vieux_grimoire_MongoDB_2.jpg"],
     "fr": {
       "shortDescription": "Backend d’un site fictif de notation de livres",
       "another": "blabla"
@@ -34,9 +34,9 @@
   {
     "id": "3",
     "majorProject": false,
-    "type": "frontend",
-    "title": "ÀÉéà",
-    "pic": "",
+    "type": "full",
+    "title": "FD-bot",
+    "pics": ["FD-bot_commands.jpg","FD-bot_hero.jpg","FD-bot_item.jpg","FD-bot_pet.jpg","FD-bot_talent.jpg"],
     "fr": {
       "shortDescription": "Bot pour Discord",
       "another": "blabla"

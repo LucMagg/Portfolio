@@ -8,10 +8,10 @@ export default function CVSection() {
 
   return (
     <SectionWrapper>
-      <StyledImg src='/CV.JPG'/>
       <DLButton>
-        <StyledLink to='/CV-Luc-Maggiotto-Développeur-Full-Stack.pdf' tabIndex={-1} target='_blank' download>{t('section5.download')}</StyledLink>
+        <StyledLink to='/CV_Luc_Maggiotto_Developpeur_Full-Stack.pdf' tabIndex={-1} target='_blank' download>{t('section5.download')}</StyledLink>
       </DLButton>
+      <StyledImg src='/CV.JPG'/>
     </SectionWrapper>
   )
 }

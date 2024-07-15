@@ -17,7 +17,7 @@ export default function HomeSection() {
   return (
     <HomeSectionWrapper>
       <TopWrapper>
-        <ImageWrapper src='/images/Me.jpg' alt={ t('section1.photoalt') }/>
+        <ImageWrapper src='/Me.jpg' alt={ t('section1.altphoto') }/>
         <PrezWrapper>
           <H2>{ t('section1.title') }</H2>
           <Subtitle>{ t('section1.subtitle') }</Subtitle>

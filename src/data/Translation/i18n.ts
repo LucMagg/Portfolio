@@ -80,7 +80,7 @@ i18n
             text9_link: 'https://fr.wikipedia.org/wiki/Python_(langage)',
             text9_linkText: 'Python',
             text9_2: '.',
-            text9_3: 'Ce qui était au départ un hobby est devenu au fil du temps une passion dévorante.',
+            text9_3: 'Ce qui était au départ un loisir est devenu au fil du temps une passion dévorante.',
             text10: 'Alors après deux décennies d\'une carrière riche et variée,  j\'ai décidé de prendre un nouveau départ et de m\'y consacrer à plein temps.',
             text11: 'Dans le cadre de ma reconversion, j\'ai suivi un programme complet de développement web, maîtrisant les fondamentaux ',
             text11_link1: 'https://fr.wikipedia.org/wiki/HTML5',

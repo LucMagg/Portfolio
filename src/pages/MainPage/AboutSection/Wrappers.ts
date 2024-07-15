@@ -11,6 +11,6 @@ export const Paragraph = styled.p`
 
 export const WikipediaLink = styled.a`
   color: ${(props) => props.theme.textColor};
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 600;
 `

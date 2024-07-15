@@ -20,7 +20,7 @@ export default function SkillCard({ skills }: { skills: skillsType }){
         {skills.stacks.map((stack) => {
           return (
             <SkillCardWrapper key={ stack.name }>
-              <SkillCardPic src={ `/images/${stack.pic}` } alt={ stack.name }></SkillCardPic>
+              <SkillCardPic src={ `/images/Skills/${stack.pic}` } alt={ stack.name }></SkillCardPic>
             </SkillCardWrapper>
           )
         })}

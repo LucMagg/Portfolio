@@ -8,8 +8,8 @@ export const SectionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
   padding: 10px;
+  gap: 10px;
 `
 
 export const StyledImg = styled.img`

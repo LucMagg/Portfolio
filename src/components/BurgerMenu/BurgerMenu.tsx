@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useEffect, useState} from 'react'
 import { useTheme } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
@@ -18,13 +18,17 @@ export default function BurgerMenu ({ size }:{size : number }) {
   const { t } = useTranslation()
   const navItems = t('navitems', { returnObjects: true }) as Record<string, string>
 
-  const handleBurgerClick = () => {
+  const closeMenu = () => {
+    setAnimationClass('close')
+    setTimeout(() => {
+      setMenuIsOpen(false)
+      setAnimationClass('')
+    }, 400)
+  }
+
+  const handleOpenCloseMenu = () => {
     if (menuIsOpen) {
-      setAnimationClass('close')
-      setTimeout(() => {
-        setMenuIsOpen(false)
-        setAnimationClass('')
-      }, 400)
+      closeMenu()
     } else {
       setMenuIsOpen(true);
       setAnimationClass('open')
@@ -32,17 +36,33 @@ export default function BurgerMenu ({ size }:{size : number }) {
   }
 
   const handleNavItemClick = (e, navItem) => {
-    setAnimationClass('close')
-    setTimeout(() => {
-      setMenuIsOpen(false)
-      setAnimationClass('')
-    }, 400)
+    closeMenu()
     handleScroll(e, navItem)
   }
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Escape') {
+      closeMenu()
+    } else if (e.key === ' ') {
+      e.preventDefault()
+    }
+  }
+
+  useEffect(() => {
+    if (menuIsOpen) {
+      document.addEventListener('keydown', handleKeyDown)
+    } else {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [menuIsOpen])
+
   return (
     <>
-      <StyledButton onClick={ handleBurgerClick }>
+      <StyledButton onClick={ handleOpenCloseMenu }>
         <svg xmlns="http://www.w3.org/2000/svg" width={ size } height={ size } viewBox="0 0 24 24" fill="none">
           <rect width={24} height={24} fill={ theme.headerBackgroundColor }/>
           <path d="M3 6.00092H21M3 12.0009H21M3 18.0009H21" stroke={ theme.textColor } strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -51,7 +71,7 @@ export default function BurgerMenu ({ size }:{size : number }) {
       {menuIsOpen && animationClass && (
         <MenuWrapper className={ animationClass }>
           <MenuListWrapper>
-            <CloseButton onClick={ handleBurgerClick }>
+            <CloseButton onClick={ handleOpenCloseMenu }>
               <svg xmlns="http://www.w3.org/2000/svg" width={ 32 } height={ 32 } viewBox="0 0 448 512">
                 <path 
                   d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"

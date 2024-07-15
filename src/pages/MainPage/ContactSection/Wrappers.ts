@@ -18,7 +18,7 @@ export const StyledText = styled.p`
 
 export const StyledA = styled.a`
   color: ${(props) => props.theme.textColor};
-  text-decoration: none;
+  text-decoration: underline;
   font-weight: 600;
 `
 
