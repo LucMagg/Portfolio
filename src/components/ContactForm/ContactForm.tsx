@@ -7,30 +7,28 @@ import { StyledForm, NameContainer, StyledLabel, StyledInput, StyledTextarea, St
 export default function ContactForm() {
   const { t } = useTranslation()
 
-  const form = useRef<HTMLFormElement>(null)
-
-  const sendMail = (e: FormEvent) => {
+  const sendMail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    if (form.current) {
-      emailjs
-        .sendForm('service_t5mvfnj', 'template_evqaey4', form.current, {
-          publicKey: 'zz6T-c5ZBfIKFm_Jj',
-        })
-        .then(
-          () => {
-            console.log('Email transmis !')
+    const form = e.target as HTMLFormElement
 
-          },
-          (error) => {
-            console.log('Erreur lors de l\'envoi : ', error.text)
-          }
-        )
+    emailjs
+      .sendForm('service_t5mvfnj', 'template_evqaey4', form, {
+        publicKey: 'zz6T-c5ZBfIKFm_Jj',
+      })
+      .then(
+        () => {
+          console.log('Email transmis !')
+          form.reset()
+        },
+        (error) => {
+          console.log('Erreur lors de l\'envoi : ', error.text)
+        }
+      )
   
-    }
   }
 
   return(
-    <StyledForm ref={ form } onSubmit={ sendMail }>
+    <StyledForm  onSubmit={ sendMail }>
       <NameContainer>
         <StyledLabel>
           { t('section4.contactForm.lastname') }

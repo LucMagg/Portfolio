@@ -116,6 +116,9 @@ i18n
               send: 'Envoyer'
             }
           },
+          section5: {
+            download: 'Télécharger mon CV'
+          },
           portfolio: {
             filters : {
               frontend: "Frontend",
@@ -180,10 +183,10 @@ i18n
             altphoto: 'Picture of Luc Maggiotto',
             title: 'Luc Maggiotto',
             subtitle: 'Full-Stack Developer',
-            content1: 'It\'s never too late to code your dreams :',
+            content1: 'It\'s never too late to code your dreams:',
             content2: 'how I transformed my lifelong passion into the driving force of my new professional life.',
             contactme: 'Contact me',
-            skills: 'My skills :',
+            skills: 'My skills:',
             skillItems: {
               front: 'Frontend',
               back: 'Backend',
@@ -191,7 +194,7 @@ i18n
             }            
           },
           section2: {
-            text1: 'Hello ! My name is Luc Maggiotto and I am exactly ',
+            text1: 'Hello! My name is Luc Maggiotto and I am exactly ',
             text1_2: ' old.',
             text2: 'When I was a kid in the late 80s, I got my hands on an ',
             text2_link: 'https://en.wikipedia.org/wiki/Oric_(computer)#Oric_Atmos',
@@ -237,7 +240,7 @@ i18n
             text11_link5: 'https://en.wikipedia.org/wiki/Node.js',
             text11_linkText5: 'Node.js',
             text11_6: '.',
-            text12: 'Now I\'m ready to start a new life !'
+            text12: 'Now I\'m ready to start a new life!'
           },
           section3 : {
             learnMore: 'learn more →',
@@ -245,7 +248,7 @@ i18n
           },
           section4: {
             text1: 'Don\'t hesitate to contact me by email at ',
-            text2: ' or through this form :',
+            text2: ' or through this form:',
             contactForm : {
               lastname: 'Last name',
               firstname: 'First name',
@@ -254,6 +257,9 @@ i18n
               message: 'Message',
               send: 'Send'
             }
+          },
+          section5: {
+            download: 'Download my resume'
           },
           portfolio: {
             filters : {

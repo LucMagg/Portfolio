@@ -1,10 +1,17 @@
 import React from 'react'
-import { IframeWrapper, StyledIframe } from './Wrappers'
+import { useTranslation } from 'react-i18next'
+
+import { SectionWrapper, StyledImg, DLButton, StyledLink } from './Wrappers'
 
 export default function CVSection() {
+  const { t } = useTranslation()
+
   return (
-    <IframeWrapper>
-      <StyledIframe src='/CV.pdf'/>
-    </IframeWrapper>
+    <SectionWrapper>
+      <StyledImg src='/CV.JPG'/>
+      <DLButton>
+        <StyledLink to='/CV-Luc-Maggiotto-Développeur-Full-Stack.pdf' tabIndex={-1} target='_blank' download>{t('section5.download')}</StyledLink>
+      </DLButton>
+    </SectionWrapper>
   )
 }

@@ -18,15 +18,6 @@ export const FilterWrapper = styled.ul`
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: sticky;
   border-bottom: 1px solid ${(props) => props.theme.componentsBorderColor};
   background-color: ${(props) => props.theme.headerBackGroundColor};
-  z-index: 2;
-  position: sticky;
-  left: 0;
-  top: ${(props) => props.theme.headerMobileHeight}px;
-
-  @media (min-width: ${(props) => props.theme.mobileBreakpoint}px) {
-    top: ${(props) => props.theme.headerNormalHeight}px;
-  }
 `
