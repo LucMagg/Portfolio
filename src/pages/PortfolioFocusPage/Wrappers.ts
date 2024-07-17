@@ -4,18 +4,21 @@ import { Heading2, Heading3, Text } from '../../data/Theme/globalStyles'
 export const PageWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  min-height: calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px);
+  height: max(calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px), calc((100vw - 40px) / 1.5));
+  min-height: calc(((100vw - 40px) / 1.5) + 475px);
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    min-height: calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px);
+    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), calc((100vw - 40px) / 1.5) + 300px);
   }
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    height: calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px);
+    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), calc((100vw - 60px)/2));
+    min-height: auto;
   }
+
 `
 
 export const StyledH2 = styled.h2`
@@ -41,7 +44,7 @@ export const CarouselWrapper = styled.div`
   display: flex;
   flex-flow: row nowrap;
 
-  height: calc((100vh - ${ (props) => props.theme.headerNormalHeight }px) / 2);
+  height: calc((100vw - 40px) / 1.5);
   width: calc(100vw - 40px);
   border-radius: 25px;
   object-fit: contain;
@@ -71,8 +74,8 @@ export const PicWrapper = styled.img`
 	position: relative;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    width: calc((100vw - 60px)/2);
     height: calc(100% - 42px);
+    width: calc((100vw - 40px)/2);
   }
 `
 

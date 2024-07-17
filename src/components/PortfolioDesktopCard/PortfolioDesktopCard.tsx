@@ -11,9 +11,6 @@ export default function PortfolioDesktopCard ( { item } : {item: itemTypes} ) {
   const [isFocused, setIsFocused] = useState(false)
   const { t } = useTranslation()
 
-  console.log(item.title)
-  console.log(item.pics[0])
-
   return (
     <PortfolioCardWrapper $isFocused={ isFocused }>
       <PortfolioCardLink to={ `/projects/${contractStr(item.title)}` } onFocus={ () => setIsFocused(true) } onBlur= { () => setIsFocused(false) }>

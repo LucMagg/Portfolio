@@ -11,6 +11,7 @@ type PortfolioCardWrapperProps = {
 
 export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   width: 100%;
+  max-width: 700px;
   height: 100%;
   position: relative;
   border: ${(props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor};
