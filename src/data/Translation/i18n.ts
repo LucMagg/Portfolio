@@ -121,11 +121,17 @@ i18n
           },
           portfolio: {
             filters : {
-              frontend: "Frontend",
-              backend: "Backend",
-              others: "Autres",
+              frontend: 'Frontend',
+              backend: 'Backend',
               all: "Tous"
-            }
+            },
+            carouselAltButton: {
+              previous: 'précédent',
+              next: 'suivant'
+            },
+            description: "Description :",
+            skills: "Compétences acquises :",
+            technos: "Technologies utilisées :"
           },
           counter: {
             years: {
@@ -263,11 +269,17 @@ i18n
           },
           portfolio: {
             filters : {
-              frontend: "Frontend",
-              backend: "Backend",
-              others: "Others",
+              frontend: 'Frontend',
+              backend: 'Backend',
               all: "All"
-            }
+            },
+            carouselAltButton: {
+              previous: 'previous',
+              next: 'next'
+            },
+            description: "Description:",
+            skills: "Acquired skills:",
+            technos: "Used technologies:"
           },
           counter: {
             years: {
@@ -308,9 +320,15 @@ i18n
 
   Portfolio.forEach((item: PortfolioItemType) => {
     const addTranslations = ({ portfolioItem, lang }: addTranslationsTypes) => {
-      const translations = portfolioItem[lang] as Record<string, string>
+      const translations = portfolioItem[lang] as Record<string, any>
       for (const [key, value] of Object.entries(translations)) {
-        i18n.addResource(lang, 'translation', `portfolio.${portfolioItem.id}.${key}`, value)
+        if (Array.isArray(value)) {
+          value.forEach((item, index) => {
+            i18n.addResource(lang, 'translation', `portfolio.${portfolioItem.id}.${key}.${index}`, item)
+          })
+        } else {
+          i18n.addResource(lang, 'translation', `portfolio.${portfolioItem.id}.${key}`, value)
+        }
       }
     }
     addTranslations({ portfolioItem: item, lang: 'fr'})

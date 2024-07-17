@@ -4,7 +4,17 @@ export type PortfolioItemType = {
   type: string
   title: string
   pics: string[]
-  fr: Record<string, string>
-  en: Record<string, string>
+  fr: {
+    shortDescription: string
+    pics_titles: string[]
+    fullDescription: string[]
+    skills: string[]
+  }
+  en: {
+    shortDescription: string
+    pics_titles: string[]
+    fullDescription: string[]
+    skills: string[]
+  }
   stacks: string[]
 }

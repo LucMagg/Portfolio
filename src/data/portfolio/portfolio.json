@@ -4,14 +4,30 @@
     "majorProject": true,
     "type": "frontend",
     "title": "Kasa",
-    "pics": ["Kasa_landing_page.jpg","Kasa_about_page.jpg","Kasa_about_page_mobile.jpg","Kasa_error_page.jpg","Kasa_error_page_mobile.jpg","Kasa_landing_page_mobile.jpg","Kasa_rental_page.jpg","Kasa_rental_page_mobile.jpg"],
+    "pics": ["Kasa_landing_page.jpg","Kasa_about_page.jpg","Kasa_rental_page.jpg","Kasa_error_page.jpg","Kasa_landing_page_mobile.jpg","Kasa_about_page_mobile.jpg","Kasa_rental_page_mobile.jpg","Kasa_error_page_mobile.jpg"],
     "fr": {
-      "shortDescription": "Frontend d’un site fictif de location d’hébergement",
-      "another": "blabla"
+      "shortDescription": "Frontend d’une application web de location immobilière fictive",
+      "pics_titles": ["Page d'accueil (version desktop)","Page \"à propos\" (version desktop)","Page détaillée d'une location (version desktop)","Page d'erreur (version desktop)","Page d'accueil (version mobile)","Page \"à propos\" (version mobile)","Page détaillée d'une location (version mobile)","Page d'erreur (version mobile)"],
+      "fullDescription": [
+        "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+        "Il s'agissait d'implémenter le front-end d’une application à partir d'une maquette Figma en utilisant React, React Router et Sass."
+      ],
+      "skills": ["Configurer la navigation entre les pages de l'application avec React Router",
+        "Initialiser une application avec Create React App / Vite",
+        "Développer des éléments de l'interface d'un site web grâce à des composants React"
+      ]
     },
     "en": {
-      "shortDescription": "Frontend of a fictitious accommodation rental site",
-      "another": "blabla"
+      "shortDescription": "Frontend of a fictitious real estate rental web application",
+      "pics_titles": ["Landing page (desktop version)","About page (desktop version)","Detailed page of a rental (mobile version)","Error page (desktop version)","Landing page (mobile version)","About page (mobile version)","Detailed page of a rental (desktop version)","Error page (mobile version)"],
+      "fullDescription": [
+        "This project was carried out as part of my OpenClassrooms training as a web developer.",
+        "It involved implementing the front-end of an application from a Figma model using React, React Router and Sass."
+      ],
+      "skills": ["Configure navigation between application pages with React Router",
+        "Initialize an application with Create React App / Vite",
+        "Developing website interface elements using React components"
+      ]
     },
     "stacks": [ "React", "React-router", "Sass" ]
   },
@@ -23,11 +39,15 @@
     "pics": ["Mon_vieux_grimoire_Postman_routes.jpg","Mon_vieux_grimoire_Postman_run.jpg","Mon_vieux_grimoire_MongoDB.jpg","Mon_vieux_grimoire_MongoDB_2.jpg"],
     "fr": {
       "shortDescription": "Backend d’un site fictif de notation de livres",
-      "another": "blabla"
+      "pics_titles": [],
+      "fullDescription": [],
+      "skills": []
     },
     "en": {
       "shortDescription": "Backend of a fictitious book rating site",
-      "another": "blabla"
+      "pics_titles": [],
+      "fullDescription": [],
+      "skills": []
     },
     "stacks": [ "Node", "Express", "MongoDB" ]
   },
@@ -39,11 +59,15 @@
     "pics": ["FD-bot_commands.jpg","FD-bot_hero.jpg","FD-bot_item.jpg","FD-bot_pet.jpg","FD-bot_talent.jpg"],
     "fr": {
       "shortDescription": "Bot pour Discord",
-      "another": "blabla"
+      "pics_titles": [],
+      "fullDescription": [],
+      "skills": []
     },
     "en": {
       "shortDescription": "Discord bot",
-      "another": "blabla"
+      "pics_titles": [],
+      "fullDescription": [],
+      "skills": []
     },
     "stacks": [ "Python", "Discord" ]
   }

@@ -29,14 +29,15 @@ export const PortfolioCardLink =  styled(Link)`
 
 export const PortfolioCardPic = styled.img`
   width: 100%;
-  height: calc(100% - 80px);
+  height: calc(100% - 100px);
   object-fit: contain;
   display: block;
 `
 
 export const DescriptionWrapper = styled.div`
   width: 100%;
-  height: 80px;
+  height: 100px;
+  min-height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -57,7 +58,7 @@ export const DescriptionText = styled.p`
   ${Text};
 `
 
-export const DescriptionStackWrapper = styled.div`
+export const DescriptionStackWrapper = styled.ul`
   padding-top: 5px;
   display: flex;
   flex-direction: row;
@@ -65,7 +66,8 @@ export const DescriptionStackWrapper = styled.div`
   gap: 5px;
 `
 
-export const StackWrapper = styled.p`
+export const StackWrapper = styled.li`
+  list-style: none;
   padding-inline: 5px;
   ${Text};
   border: 3px solid ${(props) => props.theme.componentsBorderColor};

@@ -14,7 +14,7 @@ export default function PortfolioMobileCard ( { item } : {item: itemTypes} ) {
   return (
     <PortfolioCardWrapper $isFocused={ isFocused }>
       <PortfolioCardLink to={ `/projects/${contractStr(item.title)}` } onFocus={ () => setIsFocused(true) } onBlur= { () => setIsFocused(false) }>
-          <PortfolioCardPic src={ `./images/${item.title}/${item.pics[0]}` } alt= { item.title } />
+          <PortfolioCardPic src={ `/images/${item.title}/${item.pics[0]}` } alt= { item.title } />
           <DescriptionWrapper>
             <DescriptionTitle>{ item.title }</DescriptionTitle>
             <DescriptionText>{ t(`portfolio.${item.id}.shortDescription`) }</DescriptionText>
