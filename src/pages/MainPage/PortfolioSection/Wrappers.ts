@@ -9,6 +9,7 @@ export const PortfolioSectionWrapper = styled.div`
   width: 100%;
   gap: 30px;
   padding-block: 30px;
+  z-index: 1;
   
   @media (min-width: ${(props) => props.theme.tabletBreakpoint}px) {
     height: calc(100vh - (53px + 121px));

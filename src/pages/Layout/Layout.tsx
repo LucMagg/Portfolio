@@ -10,6 +10,7 @@ import Footer from '../../components/Footer/Footer'
 import { AppContainer, GlobalStyle, Main } from './Wrappers'
 import '../../data/Translation/i18n'
 import { history } from '../../assets/history'
+import OldSchoolBackground from '../../components/OdlSchoolBackground/OldSchoolBackground'
 
 
 type LayoutTypes = {
@@ -72,6 +73,7 @@ export default function Layout({ children }: LayoutTypes) {
           <Header />
           <Main>
             {children ?? <Outlet />}
+            <OldSchoolBackground />
           </Main>
           <Footer />
         </AppContainer>

@@ -9,6 +9,7 @@ export const ContactSectionWrapper = styled.div`
   width: 100%;
   padding: 10px;
   gap: 30px;
+  z-index: 1;
 `
 
 export const StyledText = styled.p`

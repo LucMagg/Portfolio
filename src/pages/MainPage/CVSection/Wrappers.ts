@@ -10,6 +10,7 @@ export const SectionWrapper = styled.div`
   align-items: center;
   padding: 10px;
   gap: 10px;
+  z-index: 1;
 `
 
 export const StyledImg = styled.img`

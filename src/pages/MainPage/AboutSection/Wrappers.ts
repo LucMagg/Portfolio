@@ -3,6 +3,7 @@ import { Text } from '../../../data/Theme/globalStyles'
 
 export const AboutWrapper = styled.div`
   padding: 20px;
+  z-index: 1;
 `
 
 export const Paragraph = styled.p`

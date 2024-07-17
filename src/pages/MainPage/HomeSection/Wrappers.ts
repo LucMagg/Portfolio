@@ -7,6 +7,7 @@ export const HomeSectionWrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - ${(props) => props.theme.headerMobileHeight}px);
+  z-index: 1;
   
   @media (min-width: ${(props) => props.theme.mobileBreakpoint}px) {
     min-height: calc(100vh - ${(props) => props.theme.headerNormalHeight}px);
