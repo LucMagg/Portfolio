@@ -159,6 +159,10 @@ i18n
               plural: 'secondes'
             },
             and: ' et '
+          },
+          footer: {
+            text1: 'Réalisé par ',
+            text2: ' en utilisant React avec TypeScript - 2024'
           }
         }
       },
@@ -307,6 +311,10 @@ i18n
               plural: 'seconds'
             },
             and: ' and '
+          },
+          footer: {
+            text1: 'Made by ',
+            text2: ' using React with TypeScript - 2024'
           }
         }
       }

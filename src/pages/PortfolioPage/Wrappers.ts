@@ -8,6 +8,7 @@ export const PortfolioPageWrapper = styled.div`
   align-items: center;
   gap: 20px;
   min-height: 100vh;
+  padding-bottom: 20px;
 `
 
 export const FilterWrapper = styled.ul`

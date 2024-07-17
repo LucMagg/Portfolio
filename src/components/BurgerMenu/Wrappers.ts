@@ -12,7 +12,7 @@ export const StyledButton = styled.button`
 `
 
 export const MenuWrapper = styled.div`
-  z-index: 2;
+  z-index: 3;
   position: absolute;
   top: 0;
   right: 0;

@@ -12,7 +12,7 @@ export const HeaderWrapper = styled.header`
   padding: 10px;
   position: sticky;
   top: 0;
-  z-index: 1;
+  z-index: 3;
   background-color: ${(props) => props.theme.headerBackGroundColor};
   border-bottom: 1px solid ${(props) => props.theme.componentsBorderColor};
 

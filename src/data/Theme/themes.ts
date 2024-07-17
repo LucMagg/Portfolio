@@ -5,6 +5,7 @@ type commonThemeTypes = {
   tabletBreakpoint: number
   headerNormalHeight: number
   headerMobileHeight: number
+  footerHeight: number
 }
 
 export const commonTheme: commonThemeTypes = {
@@ -13,7 +14,8 @@ export const commonTheme: commonThemeTypes = {
   mobileBreakpoint: 768,
   tabletBreakpoint: 1024,
   headerNormalHeight: 130,
-  headerMobileHeight: 80
+  headerMobileHeight: 80,
+  footerHeight: 62
 }
 
 export type themeTypes = commonThemeTypes & {

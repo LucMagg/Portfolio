@@ -54,7 +54,7 @@
   {
     "id": "3",
     "majorProject": false,
-    "type": "full",
+    "type": "frontend",
     "title": "FD-bot",
     "pics": ["FD-bot_commands.jpg","FD-bot_hero.jpg","FD-bot_item.jpg","FD-bot_pet.jpg","FD-bot_talent.jpg"],
     "fr": {

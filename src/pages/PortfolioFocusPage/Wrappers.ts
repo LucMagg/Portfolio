@@ -7,9 +7,14 @@ export const PageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  min-height: calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px);
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    height: calc(100vh - ${ (props) => props.theme.headerNormalHeight }px);
+    min-height: calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px);
+  }
+
+  @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
+    height: calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px);
   }
 `
 

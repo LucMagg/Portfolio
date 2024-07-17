@@ -7,6 +7,7 @@ export const ProjectsWrapper = styled.ul`
   justify-content: center;
   padding-inline: 10px;   
   gap: 10px;
+  width: calc(100vw - 10px);
 
   @media (min-width: ${(props) => props.theme.mobileBreakpoint}px) {
     display: grid;
