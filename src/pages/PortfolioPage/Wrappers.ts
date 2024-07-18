@@ -9,6 +9,7 @@ export const PortfolioPageWrapper = styled.div`
   gap: 20px;
   min-height: 100vh;
   padding-bottom: 20px;
+  z-index: 1;
 `
 
 export const FilterWrapper = styled.ul`
@@ -21,4 +22,5 @@ export const FilterWrapper = styled.ul`
   gap: 10px;
   border-bottom: 1px solid ${(props) => props.theme.componentsBorderColor};
   background-color: ${(props) => props.theme.headerBackGroundColor};
+  z-index: 1;
 `

@@ -24,6 +24,7 @@ export const PageWrapper = styled.div`
 export const StyledH2 = styled.h2`
   ${ Heading2 };
   padding-bottom: 20px;
+  z-index: 1;
 `
 
 export const ProjectDetailsWrapper = styled.div`
@@ -32,6 +33,7 @@ export const ProjectDetailsWrapper = styled.div`
   justify-content: flex-start;
   align-items: center;
   gap: 20px;
+  z-index: 1;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
     flex-direction: row;
@@ -51,6 +53,7 @@ export const CarouselWrapper = styled.div`
   overflow: hidden;
   background-color: ${ (props ) => props.theme.componentBackGroundColor};
   border: 1px solid ${ (props ) => props.theme.componentsBorderColor};
+  z-index: 1;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
     height: 100%;
@@ -91,6 +94,7 @@ export const DescriptionPartWrapper = styled.div`
   align-items: flex-start;
   width: calc(100vw - 40px);
   height: fit-content;
+  z-index: 1;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
     width: calc((100vw - 60px)/2);

@@ -51,10 +51,12 @@ export default function PortfolioFocusPage() {
           { itemsToJSX('fullDescription').map((item, index) => {
               return <Description key={ index }>{ item }</Description>
           }) }
-          <ul><StyledTitle>{ t('portfolio.skills') }</StyledTitle></ul>
-          { itemsToJSX('skills').map((item, index) => {
-              return <StyledLi key={ index }>{ item }</StyledLi>
-          }) }
+          <StyledTitle>{ t('portfolio.skills') }</StyledTitle>
+          <ul>
+            { itemsToJSX('skills').map((item, index) => {
+                return <StyledLi key={ index }>{ item }</StyledLi>
+            }) }
+          </ul>
           <StyledTitle>{ t('portfolio.technos') }</StyledTitle>
           <StackWrapper>
             { project.stacks.map((stack) => {
