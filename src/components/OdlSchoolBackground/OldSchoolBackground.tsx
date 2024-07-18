@@ -19,15 +19,14 @@ type PointsArray = PointType[][]
 
 type QuadrilateresType = PointsArray[]
 
-const setNewSpeed = () => {
-  return Math.random() * 200 + 200
+type OldSchoolBackgroundTypes = {
+  quadNumber: number
+  speed: number
+  streakNumber: number
 }
 
-const setNewAngle = (offset: number) => {
-  return Math.random() * 90 + offset
-}
 
-export default function OldSchoolBackground() {
+export default function OldSchoolBackground({quadNumber, speed, streakNumber}: OldSchoolBackgroundTypes) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { footerRef, footerHeight } = useFooterContext()
 
@@ -35,15 +34,23 @@ export default function OldSchoolBackground() {
 
   const deltaRef = useRef(1/30)
 
+  const setNewSpeed = () => {
+    return Math.random() * speed + speed
+  }
+  
+  const setNewAngle = (offset: number) => {
+    return Math.random() * 90 + offset
+  }
+
   const initialQuadrilateres = useMemo(() => {
-    return Array.from({ length: 2 }, () => {
+    return Array.from({ length: quadNumber }, () => {
       return Array.from({ length: 4 }, () => {
         const initialPoint = {
           coordinate: { x: Math.random() * 990 + 5, y: Math.random() * 990 + 5 },
           speed: setNewSpeed(),
           angle: Math.random() * 360
         }
-        return Array.from({ length: 6 }, (_, i) => ({
+        return Array.from({ length: streakNumber + 1 }, (_, i) => ({
           ...initialPoint,
           coordinate: {
             x: initialPoint.coordinate.x - i * initialPoint.speed * Math.cos(initialPoint.angle * (Math.PI / 180)) * deltaRef.current,

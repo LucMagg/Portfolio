@@ -71,7 +71,7 @@ export default function Layout({ children }: LayoutTypes) {
             <Header />
             <Main>
               {children ?? <Outlet />}
-              <OldSchoolBackground />
+              <OldSchoolBackground quadNumber={ 2 } speed={ 200 } streakNumber={ 5 } />
             </Main>
             <Footer />
           </AppContainer>
