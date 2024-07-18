@@ -3,6 +3,10 @@ import { Heading3 } from '../../data/Theme/globalStyles'
 import { slideFromTopRightCorner, slideToTopRightCorner } from '../../assets/animations'
 
 
+export const StyledLi = styled.li`
+  list-style: none;
+`
+
 export const StyledButton = styled.button`
   border: 1px solid ${ (props) => props.theme.textColor };
   border-radius: 10px;
@@ -74,10 +78,11 @@ export const StyledA = styled.a`
   }  
 `
 
-export const TogglersWrapper = styled.div`
+export const TogglersWrapper = styled.li`
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
   min-width: 150px;
+  list-style: none;
 `

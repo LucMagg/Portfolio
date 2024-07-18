@@ -1,6 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { handleScroll } from '../../assets/utils'
+import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 import ThemeToggler from '../ThemeToggler/ThemeToggler'
 import LanguageToggler from '../LanguageToggler/LanguageToggler'
@@ -11,12 +11,19 @@ export default function NavMenu() {
   const { t } = useTranslation()
   const navItems = t('navitems', { returnObjects: true }) as Record<string, string>  
 
+  const scrollNavigate = useScrollNavigate()
+
+  const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
+    e.preventDefault()
+    scrollNavigate(anchor)
+  }
+
   return (
     <>
       { Object.values(navItems).map((navItem) => {
         return (
           <NavListItemWrapper key={ navItem }>
-            <StyledA href='/' onClick={ (e) => handleScroll(e, navItem) }>
+            <StyledA href='/' onClick={ (e) => handleClick(e, navItem) }>
               { navItem }
             </StyledA>
           </NavListItemWrapper>

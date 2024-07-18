@@ -4,6 +4,7 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 import Portfolio from '../portfolio/portfolio.json'
 import { PortfolioItemType } from '../portfolio/portfolioTypes'
+import BurgerMenu from '../../components/BurgerMenu/BurgerMenu'
 
 i18n
   .use(LanguageDetector)
@@ -23,6 +24,10 @@ i18n
             nav2: 'Portfolio',
             nav3: 'Contact',
             nav4: 'Mon CV'
+          },
+          burgerMenu: {
+            open: 'ouvrir le menu de navigation',
+            close: 'fermer le menu de navigation'
           },
           toggler: {
             lightmode: 'Changer en mode sombre',
@@ -177,6 +182,10 @@ i18n
             nav2: 'Portfolio',
             nav3: 'Contact',
             nav4: 'My resume'
+          },
+          burgerMenu: {
+            open: 'open navigation menu',
+            close: 'close navigation menu'
           },
           toggler: {
             lightmode: 'Toggle to dark theme',

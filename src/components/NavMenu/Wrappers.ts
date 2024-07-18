@@ -31,10 +31,11 @@ export const StyledA = styled.a`
   }
 `
 
-export const TogglersWrapper = styled.div`
+export const TogglersWrapper = styled.li`
   display: flex;
   flex-direction: column;
   gap: 10px;
   align-items: center;
   min-width: 150px;
+  list-style: none;
 `

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { handleScroll } from '../../assets/utils'
+import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 import { useTheme } from 'styled-components'
 
 import Logo from '../Logo/Logo'
@@ -12,6 +12,12 @@ import BurgerMenu from '../BurgerMenu/BurgerMenu'
 export default function NavBar() {
   const { t } = useTranslation()
   const theme = useTheme()
+  const scrollNavigate = useScrollNavigate()
+
+  const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
+    e.preventDefault()
+    scrollNavigate(anchor)
+  }
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
 
@@ -32,7 +38,7 @@ export default function NavBar() {
     <NavWrapper>
       <LinkListWrapper>
         <LogoWrapper>
-          <LogoLink href='/' onClick={ (e) => handleScroll(e, 'top') } aria-label={t('logo.alt')}>
+          <LogoLink href='/' onClick={ (e) => handleClick(e, 'top') } aria-label={t('logo.alt')}>
             <Logo size={ svgSize } />
           </LogoLink>
         </LogoWrapper>

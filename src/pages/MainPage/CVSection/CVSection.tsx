@@ -11,7 +11,7 @@ export default function CVSection() {
       <DLButton>
         <StyledLink to='/CV_Luc_Maggiotto_Developpeur_Full-Stack.pdf' tabIndex={-1} target='_blank' download>{t('section5.download')}</StyledLink>
       </DLButton>
-      <StyledImg src='/CV.JPG'/>
+      <StyledImg src='/CV.JPG' alt={ t('navitems.nav4')}/>
     </SectionWrapper>
   )
 }

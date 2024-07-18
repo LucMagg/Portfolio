@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
-import { CanvasWrapper, StyledCanvas } from './Wrappers'
+import { StyledCanvas } from './Wrappers'
 import { useTheme } from 'styled-components'
+import { useFooterContext } from '../../hooks/useFooterContext'
 
 
 type Coordinate = {
@@ -74,6 +75,7 @@ function updateCoordinates(points: PointType[], deltaT: number): PointType[] {
 
 export default function OldSchoolBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const { footerRef, footerHeight } = useFooterContext()
 
   const [points, setPoints] = useState<PointsArray>(Array.from({ length: 4 }, () => ({
     coordinate: { x: Math.random() * 990 + 5, y: Math.random() * 990 + 5 },
@@ -123,9 +125,5 @@ export default function OldSchoolBackground() {
     };
   }, [points])
 
-  return (
-    <CanvasWrapper>
-      <StyledCanvas ref={canvasRef} height={ 1000 } width={ 1000 } />
-    </CanvasWrapper>
-  )
+  return <StyledCanvas ref={ canvasRef } height={ 1000 } width={ 1000 } $footerheight={ footerHeight }/>
 }

@@ -1,5 +1,5 @@
 import React, { createContext, useState, useMemo, useEffect } from 'react'
-import { Outlet, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
@@ -9,8 +9,8 @@ import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import { AppContainer, GlobalStyle, Main } from './Wrappers'
 import '../../data/Translation/i18n'
-import { history } from '../../assets/history'
 import OldSchoolBackground from '../../components/OdlSchoolBackground/OldSchoolBackground'
+import { FooterProvider } from '../../hooks/useFooterContext'
 
 
 type LayoutTypes = {
@@ -62,21 +62,20 @@ export default function Layout({ children }: LayoutTypes) {
     };
   }, [i18n]);
 
-  history.navigate = useNavigate()
-  history.location = useLocation()
-
   return (
     <ThemeContext.Provider value={ value }>
       <ThemeProvider theme={ theme }>
-        <GlobalStyle />
-        <AppContainer>
-          <Header />
-          <Main>
-            {children ?? <Outlet />}
-            <OldSchoolBackground />
-          </Main>
-          <Footer />
-        </AppContainer>
+        <FooterProvider>
+          <GlobalStyle />
+          <AppContainer>
+            <Header />
+            <Main>
+              {children ?? <Outlet />}
+              <OldSchoolBackground />
+            </Main>
+            <Footer />
+          </AppContainer>
+        </FooterProvider>
       </ThemeProvider>
     </ThemeContext.Provider>
   )
