@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState, useCallback, useMemo } from 'react'
 import { StyledCanvas } from './Wrappers'
 import { useTheme } from 'styled-components'
 import { useFooterContext } from '../../hooks/useFooterContext'
@@ -15,115 +15,154 @@ type PointType = {
   angle: number
 }
 
-type PointsArray = PointType[];
+type PointsArray = PointType[][]
 
-function updateCoordinates(points: PointType[], deltaT: number): PointType[] {
-  let toReturn: PointType[] = []
+type QuadrilateresType = PointsArray[]
 
-  for (let i = 0; i < points.length; i++) {   
-    const deltaX = points[i].speed * Math.cos(points[i].angle * (Math.PI / 180)) * deltaT
-    const deltaY = points[i].speed * Math.sin(points[i].angle * (Math.PI / 180)) * deltaT
-    
-    let newX = points[i].coordinate.x + deltaX
-    let newY = points[i].coordinate.y + deltaY
-    let newSpeed = points[i].speed
-    let newAngle = points[i].angle
+const setNewSpeed = () => {
+  return Math.random() * 200 + 200
+}
 
-    if (newX < 0) {
-      newX = 0
-      newSpeed = Math.random() * 400 + 100
-      if (newAngle < 180) {
-        newAngle = Math.random() * 90
-      } else {
-        newAngle = Math.random() * 90 + 270
-      }
-    } else if (newX > 1000) {
-      newX = 1000
-      newSpeed = Math.random() * 400 + 100
-      if (newAngle < 90) {
-        newAngle = Math.random() * 90 + 90
-      } else {
-        newAngle = Math.random() * 90 + 180
-      }
-    } else if (newY < 0 ) {
-      newY = 0
-      newSpeed = Math.random() * 400 + 100
-      if (newAngle < 270) {
-        newAngle = Math.random() * 90 + 90
-      } else {
-        newAngle = Math.random() * 90
-      }
-    } else if (newY > 1000 ) {
-      newY = 1000
-      newSpeed = Math.random() * 400 + 100
-      if (newAngle < 90) {
-        newAngle = Math.random() * 90 + 270
-      } else {
-        newAngle = Math.random() * 90 + 180
-      }
-    }
-
-    toReturn.push({ 
-      coordinate: { x: newX, y: newY },
-      angle: newAngle,
-      speed: newSpeed
-    })
-  }
-
-  return toReturn
+const setNewAngle = (offset: number) => {
+  return Math.random() * 90 + offset
 }
 
 export default function OldSchoolBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const { footerRef, footerHeight } = useFooterContext()
 
-  const [points, setPoints] = useState<PointsArray>(Array.from({ length: 4 }, () => ({
-    coordinate: { x: Math.random() * 990 + 5, y: Math.random() * 990 + 5 },
-    speed: Math.random() * 400 + 100,
-    angle: Math.random() * 360
-  })))
-  const delta = 1/60
-
   const theme = useTheme()
 
+  const deltaRef = useRef(1/30)
+
+  const initialQuadrilateres = useMemo(() => {
+    return Array.from({ length: 2 }, () => {
+      return Array.from({ length: 4 }, () => {
+        const initialPoint = {
+          coordinate: { x: Math.random() * 990 + 5, y: Math.random() * 990 + 5 },
+          speed: setNewSpeed(),
+          angle: Math.random() * 360
+        }
+        return Array.from({ length: 6 }, (_, i) => ({
+          ...initialPoint,
+          coordinate: {
+            x: initialPoint.coordinate.x - i * initialPoint.speed * Math.cos(initialPoint.angle * (Math.PI / 180)) * deltaRef.current,
+            y: initialPoint.coordinate.y - i * initialPoint.speed * Math.sin(initialPoint.angle * (Math.PI / 180)) * deltaRef.current
+          }
+        }))
+      })
+    })
+  }, [])
+  
+  const [quadrilateres, setQuadrilateres] = useState<QuadrilateresType>(initialQuadrilateres)
+
+  const updateCoordinates = (quads: QuadrilateresType, deltaT: number): QuadrilateresType => {
+    return quads.map(quadrilatere => {
+      const newQuad = [...quadrilatere]
+  
+      for (let i = 0; i < newQuad.length; i++) {
+  
+        const head = newQuad[i][0];
+        let newX = head.coordinate.x + head.speed * Math.cos(head.angle * (Math.PI / 180)) * deltaT;
+        let newY = head.coordinate.y + head.speed * Math.sin(head.angle * (Math.PI / 180)) * deltaT;
+        let newSpeed = head.speed;
+        let newAngle = head.angle;
+    
+        if (newX < 0) {
+          newX = 0
+          newSpeed = setNewSpeed()
+          if (newAngle < 180) {
+            newAngle = setNewAngle(0)
+          } else {
+            newAngle = setNewAngle(270)
+          }
+        } else if (newX > 1000) {
+          newX = 1000
+          newSpeed = setNewSpeed()
+          if (newAngle < 90) {
+            newAngle = setNewAngle(90)
+          } else {
+            newAngle = setNewAngle(180)
+          }
+        } else if (newY < 0 ) {
+          newY = 0
+          newSpeed = Math.random() * 20 + 100
+          if (newAngle < 270) {
+            newAngle = setNewAngle(90)
+          } else {
+            newAngle = setNewAngle(0)
+          }
+        } else if (newY > 1000 ) {
+          newY = 1000
+          newSpeed = Math.random() * 20 + 100
+          if (newAngle < 90) {
+            newAngle = setNewAngle(270)
+          } else {
+            newAngle = setNewAngle(180)
+          }
+        }
+  
+        newQuad[i][0] = {
+          coordinate: { x: newX, y: newY },
+          speed: newSpeed,
+          angle: newAngle
+        }
+    
+        for (let j = newQuad[i].length - 1; j > 0; j--) {
+          newQuad[i][j] = { ...newQuad[i][j-1] } as PointType
+        }
+      }
+    
+      return newQuad
+    })
+  }
+
+  const render = useCallback(() => {
+    const canvas = canvasRef.current;
+    const ctx = canvas?.getContext('2d');
+    if (ctx && canvas) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+      
+      quadrilateres.forEach((quad) => {
+        for (let i = 1; i < quad[0].length; i++) {
+          ctx.beginPath()
+          ctx.moveTo(quad[0][i].coordinate.x, quad[0][i].coordinate.y)
+          ctx.lineTo(quad[1][i].coordinate.x, quad[1][i].coordinate.y)
+          ctx.lineTo(quad[2][i].coordinate.x, quad[2][i].coordinate.y)
+          ctx.lineTo(quad[3][i].coordinate.x, quad[3][i].coordinate.y)
+          ctx.closePath()
+          ctx.strokeStyle = theme.componentBackGroundColor
+          ctx.lineWidth = 1
+          ctx.stroke()
+        }
+      })
+    }
+    console.log(quadrilateres)
+  }, [quadrilateres, theme.componentBackGroundColor])
+
+  
+
   useEffect(() => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
     let animationFrameId: number
     let lastUpdateTime = performance.now()
-
-    const render = () => {
-      if (ctx && canvas) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        
-        ctx.beginPath()
-        ctx.moveTo(points[0].coordinate.x, points[0].coordinate.y)
-        ctx.lineTo(points[1].coordinate.x, points[1].coordinate.y)
-        ctx.lineTo(points[2].coordinate.x, points[2].coordinate.y)
-        ctx.lineTo(points[3].coordinate.x, points[3].coordinate.y)
-        ctx.closePath()
-        ctx.strokeStyle = theme.componentBackGroundColor    
-        ctx.lineWidth = 2
-        ctx.stroke()
-      }
-    }
-
+  
     const update = () => {
-      const currentTime = performance.now();
+      const currentTime = performance.now()
       if (currentTime - lastUpdateTime > 1000 / 60) {
-        setPoints((prevPoints) => updateCoordinates(prevPoints, delta));
+        setQuadrilateres((prevQuads ) => updateCoordinates(prevQuads , deltaRef.current))
         lastUpdateTime = currentTime;
       }
-      render();
-      animationFrameId = requestAnimationFrame(update);
-    };
-
-    update() // Start the animation
-
+      render()
+      animationFrameId = requestAnimationFrame(update)
+    }
+  
+    update();
+  
     return () => {
-      cancelAnimationFrame(animationFrameId)
-    };
-  }, [points])
+      cancelAnimationFrame(animationFrameId);
+    }
+  }, [updateCoordinates, render])
+
 
   return <StyledCanvas ref={ canvasRef } height={ 1000 } width={ 1000 } $footerheight={ footerHeight }/>
 }
