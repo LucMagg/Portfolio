@@ -1,18 +1,26 @@
-import React, { ReactNode } from 'react'
+import React, { useEffect, useRef, useState, ReactNode } from 'react'
 import { useLoaderData } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
 import { PortfolioItemType } from '../../data/portfolio/portfolioTypes'
 import Carousel from '../../components/Carousel/Carousel'
-import { PageWrapper, StyledH2, ProjectDetailsWrapper, CarouselWrapper, SlideWrapper, PicWrapper, SlideIndex, DescriptionPartWrapper, StyledTitle, Description, StyledLi, StackWrapper, Stack } from './Wrappers'
+import { PageWrapper, StyledH2, ProjectDetailsWrapper, CarouselWrapper, SlideWrapper, PicWrapper, SlideIndex, DescriptionPartWrapper, StyledTitle, Description, StyledLi, StackWrapper, Stack, StyledA } from './Wrappers'
 
 
-
+type ChildrenSizeTypes = {
+  desc: number;
+  carousel: number
+}
 
 
 export default function PortfolioFocusPage() {
   const project = useLoaderData() as PortfolioItemType
   const { t } = useTranslation()
+
+  const descriptionDivRef = useRef<HTMLDivElement>(null)
+  const carouselDivRef = useRef<HTMLDivElement>(null)
+  const pageRef = useRef(null)
+  const [childrenSize, setChildrenSize] = useState<ChildrenSizeTypes>({desc: 0, carousel: 0})
 
   const slides = (project: PortfolioItemType): ReactNode[] => {
     const numberOfSlides = project.pics.length
@@ -39,14 +47,38 @@ export default function PortfolioFocusPage() {
     return toReturn
   }
 
+  const gitLink = () => {
+    return (
+      <>
+        <StyledTitle>{ t('portfolio.link') }</StyledTitle>
+        <StyledA href={ project.codeLink } target="_blank">{ project.codeLink }</StyledA>
+      </>
+    )
+  }
+
+  const updatePageHeight = () => {
+    if (descriptionDivRef.current && carouselDivRef.current) {
+      setChildrenSize({desc: descriptionDivRef.current.offsetHeight, carousel: carouselDivRef.current.offsetHeight})
+    }
+  }
+
+  useEffect(() => {
+    updatePageHeight()
+    window.addEventListener('resize', updatePageHeight)
+
+    return () => {
+      window.removeEventListener('resize', updatePageHeight)
+    }
+  }, [])
+
   return (
-    <PageWrapper>
+    <PageWrapper ref={ pageRef } $childrenSize={ childrenSize }>
       <StyledH2>{ project.title }</StyledH2>
       <ProjectDetailsWrapper>
-        <CarouselWrapper>
+        <CarouselWrapper ref={ carouselDivRef }>
           <Carousel items={ slides(project) } />
         </CarouselWrapper>
-        <DescriptionPartWrapper>
+        <DescriptionPartWrapper ref={ descriptionDivRef }>
           <StyledTitle>{ t('portfolio.description') }</StyledTitle>
           { itemsToJSX('fullDescription').map((item, index) => {
               return <Description key={ index }>{ item }</Description>
@@ -63,6 +95,7 @@ export default function PortfolioFocusPage() {
               return <Stack key={ stack }>{ stack }</Stack>
             })}
           </StackWrapper>
+          { project.codeLink !== '' ? gitLink() : null }
         </DescriptionPartWrapper>
       </ProjectDetailsWrapper>
     </PageWrapper>

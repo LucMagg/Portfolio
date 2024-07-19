@@ -135,8 +135,9 @@ i18n
               next: 'suivant'
             },
             description: "Description :",
-            skills: "Compétences acquises :",
-            technos: "Technologies utilisées :"
+            skills: 'Compétences acquises :',
+            technos: 'Technologies utilisées :',
+            link: 'Lien vers le repo :'
           },
           counter: {
             years: {
@@ -290,9 +291,10 @@ i18n
               previous: 'previous',
               next: 'next'
             },
-            description: "Description:",
-            skills: "Acquired skills:",
-            technos: "Used technologies:"
+            description: 'Description:',
+            skills: 'Acquired skills:',
+            technos: 'Used technologies:',
+            link: 'Link to the repo:'
           },
           counter: {
             years: {

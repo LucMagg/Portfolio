@@ -18,6 +18,7 @@ export const StyledImg = styled.img`
   max-width: 820px;
   aspect-ratio: 21/29.7;
   object-fit: contain;
+  border: 1px solid ${ (props) => props.theme.componentsBorderColor };
 `
 
 export const DLButton = styled(Button)`

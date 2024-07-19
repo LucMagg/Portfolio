@@ -8,12 +8,21 @@ function scrollToAnchor(anchorToScrollTo) {
   const scroller = Scroll.scroller
   
   if (anchorToScrollTo !== undefined) {
-    scroller.scrollTo(anchorToScrollTo, {
-      duration: 500,
-      delay: 100,
-      smooth: true,
-      offset: window.innerWidth > commonTheme.mobileBreakpoint ? -commonTheme.headerNormalHeight : -commonTheme.headerMobileHeight
-    })
+    if (window.matchMedia("(prefers-reduced-motion: no-preference)").matches) {
+      scroller.scrollTo(anchorToScrollTo, {
+        duration: 500,
+        delay: 100,
+        smooth: true,
+        offset: window.innerWidth > commonTheme.mobileBreakpoint ? -commonTheme.headerNormalHeight : -commonTheme.headerMobileHeight
+      })
+    } else {
+      scroller.scrollTo(anchorToScrollTo, {
+        duration: 0,
+        delay: 0,
+        smooth: false,
+        offset: window.innerWidth > commonTheme.mobileBreakpoint ? -commonTheme.headerNormalHeight : -commonTheme.headerMobileHeight
+      })
+    }
   }
 }
 

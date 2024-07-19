@@ -17,4 +17,5 @@ export type PortfolioItemType = {
     skills: string[]
   }
   stacks: string[]
+  codeLink: string
 }

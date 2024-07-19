@@ -59,7 +59,7 @@ export default function OldSchoolBackground({quadNumber, speed, streakNumber}: O
         }))
       })
     })
-  }, [])
+  }, [quadNumber, speed, streakNumber])
   
   const [quadrilateres, setQuadrilateres] = useState<QuadrilateresType>(initialQuadrilateres)
 
@@ -144,10 +144,7 @@ export default function OldSchoolBackground({quadNumber, speed, streakNumber}: O
         }
       })
     }
-    console.log(quadrilateres)
   }, [quadrilateres, theme.componentBackGroundColor])
-
-  
 
   useEffect(() => {
     let animationFrameId: number
@@ -157,19 +154,26 @@ export default function OldSchoolBackground({quadNumber, speed, streakNumber}: O
       const currentTime = performance.now()
       if (currentTime - lastUpdateTime > 1000 / 60) {
         setQuadrilateres((prevQuads ) => updateCoordinates(prevQuads , deltaRef.current))
-        lastUpdateTime = currentTime;
+        lastUpdateTime = currentTime
       }
       render()
       animationFrameId = requestAnimationFrame(update)
     }
   
-    update();
+    update()
   
     return () => {
-      cancelAnimationFrame(animationFrameId);
+      cancelAnimationFrame(animationFrameId)
     }
   }, [updateCoordinates, render])
 
+  const isAnimationAllowedByUser: boolean = window.matchMedia("(prefers-reduced-motion: no-preference)").matches
 
-  return <StyledCanvas ref={ canvasRef } height={ 1000 } width={ 1000 } $footerheight={ footerHeight }/>
+  return (
+    <>
+    { isAnimationAllowedByUser ? (
+      <StyledCanvas ref={ canvasRef } height={ 1000 } width={ 1000 } $footerheight={ footerHeight }/>
+    ) : null }
+    </>
+  )
 }

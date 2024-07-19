@@ -12,24 +12,27 @@
         "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
         "Il s'agissait d'implémenter le front-end d’une application à partir d'une maquette Figma en utilisant React, React Router et Sass."
       ],
-      "skills": ["Configurer la navigation entre les pages de l'application avec React Router",
+      "skills": [
+        "Configurer la navigation entre les pages de l'application avec React Router",
         "Initialiser une application avec Create React App / Vite",
         "Développer des éléments de l'interface d'un site web grâce à des composants React"
       ]
     },
     "en": {
       "shortDescription": "Frontend of a fictitious real estate rental web application",
-      "pics_titles": ["Landing page (desktop version)","About page (desktop version)","Detailed page of a rental (mobile version)","Error page (desktop version)","Landing page (mobile version)","About page (mobile version)","Detailed page of a rental (desktop version)","Error page (mobile version)"],
+      "pics_titles": ["Homepage (desktop version)","About page (desktop version)","Detailed page of a rental (desktop version)","Error page (desktop version)","Homepage (mobile version)","About page (mobile version)","Detailed page of a rental (mobile version)","Error page (mobile version)"],
       "fullDescription": [
         "This project was carried out as part of my OpenClassrooms training as a web developer.",
         "It involved implementing the front-end of an application from a Figma model using React, React Router and Sass."
       ],
-      "skills": ["Configure navigation between application pages with React Router",
+      "skills": [
+        "Configure navigation between application pages with React Router",
         "Initialize an application with Create React App / Vite",
         "Developing website interface elements using React components"
       ]
     },
-    "stacks": [ "React", "React-router", "Sass" ]
+    "stacks": [ "React", "React-router", "Sass" ],
+    "codeLink": "https://github.com/LucMagg/5_kasa"
   },
   {
     "id": "2",
@@ -39,36 +42,136 @@
     "pics": ["Mon_vieux_grimoire_Postman_routes.jpg","Mon_vieux_grimoire_Postman_run.jpg","Mon_vieux_grimoire_MongoDB.jpg","Mon_vieux_grimoire_MongoDB_2.jpg"],
     "fr": {
       "shortDescription": "Backend d’un site fictif de notation de livres",
-      "pics_titles": [],
-      "fullDescription": [],
-      "skills": []
+      "pics_titles": ["Routes de l'API","Test des routes","Modèle d'utilisateur","Modèle de livre"],
+      "fullDescription": [
+        "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+        "Il s'agissait de développer le back-end d'un site de notation de livres avec NodeJS et une base de données NoSQL avec MongoDB."
+      ],
+      "skills": [
+        "Implémenter un modèle logique de données conformément à la réglementation",
+        "Mettre en œuvre des opérations CRUD de manière sécurisée",
+        "Stocker des données de manière sécurisée"
+      ]
     },
     "en": {
       "shortDescription": "Backend of a fictitious book rating site",
-      "pics_titles": [],
-      "fullDescription": [],
-      "skills": []
+      "pics_titles": ["API Routes","Testing Routes","User Model","Book Model"],
+      "fullDescription": [
+        "This project was carried out as part of my OpenClassrooms training as a web developer.",
+        "It was about developing the back-end of a book rating site with NodeJS and a NoSQL database with MongoDB."
+      ],
+      "skills": [
+        "Implement a logical data model in accordance with regulations",
+        "Implement CRUD operations securely",
+        "Store data securely"
+      ]
     },
-    "stacks": [ "Node", "Express", "MongoDB" ]
+    "stacks": [ "Node", "Express", "MongoDB" ],
+    "codeLink": "https://github.com/LucMagg/6_mon_vieux_grimoire"
   },
   {
     "id": "3",
     "majorProject": false,
     "type": "frontend",
-    "title": "FD-bot",
-    "pics": ["FD-bot_commands.jpg","FD-bot_hero.jpg","FD-bot_item.jpg","FD-bot_pet.jpg","FD-bot_talent.jpg"],
+    "title": "Nina Carducci",
+    "pics": ["Nina_Carducci_landing_page1.jpg","Nina_Carducci_landing_page2.jpg","Nina_Carducci_lighthouse_scores.jpg","Nina_Carducci_rich_snippets.jpg","Nina_Carducci_wave.jpg","Nina_Carducci_landing_page_tablette1.jpg","Nina_Carducci_landing_page_mobile1.jpg"],
     "fr": {
-      "shortDescription": "Bot pour Discord",
-      "pics_titles": [],
-      "fullDescription": [],
-      "skills": []
+      "shortDescription": "Optimisation du portfolio d'une photographe",
+      "pics_titles": ["Page d'accueil (version desktop)","Page d'accueil 2 (version desktop)","Score lighthouse avant/après","Google Rich Snippets","Accessibilité (plug-in Wave)","Page d'accueil (version tablette)","Page d'accueil (version mobile)"],
+      "fullDescription": [
+        "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+        "Il s'agissait de débugger et d'optimiser un site web déjà existant (jQuery, Bootstrap) et de rédiger le cahier de recette correspondant."
+      ],
+      "skills": [
+        "Optimiser les performances d’un site web",
+        "Débugger un site web grâce aux Chrome DevTools",
+        "Rédiger un cahier de recette pour tester un site",
+        "Optimiser le référencement naturel (SEO)"
+      ]
     },
     "en": {
-      "shortDescription": "Discord bot",
-      "pics_titles": [],
-      "fullDescription": [],
-      "skills": []
+      "shortDescription": "Optimizing a Photographer's Portfolio",
+      "pics_titles": ["Homepage (desktop version)","Homepage 2 (desktop version)","Lighthouse score before/after","Google Rich Snippets","Accessibility (Wave plugin)","Homepage (tablet version)","Homepage (mobile version)"],
+      "fullDescription": [
+        "This project was carried out as part of my OpenClassrooms training as a web developer.",
+        "It was a matter of debugging and optimizing an existing website (jQuery, Bootstrap) and writing the corresponding recipe book."
+      ],
+      "skills": [
+        "Optimizing the performance of a website",
+        "Debugging a website using Chrome DevTools",
+        "Write a recipe book to test a site",
+        "Improve a website’s visibility on search engines (SEO)"
+      ]
     },
-    "stacks": [ "Python", "Discord" ]
+    "stacks": [ "JavaScript", "HTML", "CSS" ],
+    "codeLink": "https://github.com/LucMagg/4_nina-carducci"
+  },
+  {
+    "id": "4",
+    "majorProject": false,
+    "type": "frontend",
+    "title": "Sophie Bluel",
+    "pics": ["Sophie_Bluel_landing_page.jpg","Sophie_Bluel_login_page.jpg","Sophie_Bluel_admin_page.jpg","Sophie_Bluel_remove_project_page.jpg","Sophie_Bluel_add_project_page.jpg"],
+    "fr": {
+      "shortDescription": "Développement du frontend du portfolio d'une architecte",
+      "pics_titles": ["Page d'accueil","Page de connexion","Page d'administration","Modale de suppression d'un projet","Modale d'ajout d'un projet"],
+      "fullDescription": [
+        "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+        "Il s'agissait de développer le front-end du portfolio d'une architecte et de le connecter au back-end fourni, en implémentant une page de login et la partie admin du site (ajout/suppression de projets en lien avec le back-end)."
+      ],
+      "skills": [
+        "Récupérer les données utilisateurs dans le JavaScript via des formulaires",
+        "Manipuler les éléments du DOM avec JavaScript",
+        "Gérer les événements utilisateurs avec JavaScript"
+      ]
+    },
+    "en": {
+      "shortDescription": "Developing the frontend of an architect's portfolio",
+      "pics_titles": ["Home page","Login page","Administration page","Modal for deleting a project","Modal for adding a project"],
+      "fullDescription": [
+        "This project was carried out as part of my OpenClassrooms training as a web developer.",
+        "It involved developing the frontend of an architect's portfolio and connecting it to the backend provided, by implementing a login page and the admin part of the site (adding/deleting projects linked to the backend."
+      ],
+      "skills": [
+      "Retrieving user data in JavaScript via forms",
+      "Manipulating DOM elements with JavaScript",
+      "Managing user events with JavaScript"
+      ]
+    },
+    "stacks": [ "JavaScript", "HTML", "CSS" ],
+    "codeLink": "https://github.com/LucMagg/3_Portfolio-architecte-sophie-bluel"
+  },
+  {
+    "id": "5",
+    "majorProject": false,
+    "type": "frontend",
+    "title": "Booki",
+    "pics": ["Booki_desktop.jpg","Booki_tablette.jpg","Booki_mobile.jpg"],
+    "fr": {
+      "shortDescription": "Création de la page d'accueil d'une agence de voyage fictive",
+      "pics_titles": ["Version desktop","Version tablette","Version mobile"],
+      "fullDescription": [
+        "Ce projet a été réalisé dans le cadre de ma formation OpenClassrooms de développeur web.",
+        "Il s'agissait de créer la page d'accueil d'une agence de voyage fictive de manière responsive à partir de maquettes Figma fournies."
+      ],
+      "skills": [
+        "Intégrer du contenu conformément à une maquette avec HTML et CSS",
+        "Implémenter une interface responsive avec HTML et CSS"
+      ]
+    },
+    "en": {
+      "shortDescription": "Creating the homepage of a fictional travel agency",
+      "pics_titles": ["Desktop version","Tablet version","Mobile version"],
+      "fullDescription": [
+        "This project was carried out as part of my OpenClassrooms training as a web developer.",
+        "It was about creating the homepage of a fictional travel agency in a responsive way from Figma mockups provided."
+      ],
+      "skills": [
+        "Integrate content according to a mockup with HTML and CSS",
+        "Implement a responsive interface with HTML and CSS"
+      ]
+    },
+    "stacks": [ "HTML", "CSS" ],
+    "codeLink": "https://github.com/LucMagg/2_Booki"
   }
 ]

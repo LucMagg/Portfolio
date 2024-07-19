@@ -1,22 +1,24 @@
 import styled from 'styled-components'
-import { Heading2, Heading3, Text } from '../../data/Theme/globalStyles'
+import { Heading2, Heading3, Text, focusRingBorder } from '../../data/Theme/globalStyles'
 
-export const PageWrapper = styled.div`
+
+type PageWrapperTypes = {
+  $childrenSize: {
+    desc: number
+    carousel: number
+  }
+}
+
+export const PageWrapper = styled.div<PageWrapperTypes>`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   padding: 20px;
-  height: max(calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px), calc((100vw - 40px) / 1.5));
-  min-height: calc(((100vw - 40px) / 1.5) + 475px);
+  height: max(calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px), calc(${ (props) => props.$childrenSize.desc + props.$childrenSize.carousel }px + 116px));
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), calc((100vw - 40px) / 1.5) + 300px);
-  }
-
-  @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), calc((100vw - 60px)/2));
-    min-height: auto;
+    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), max(${ (props) => props.$childrenSize.desc }px, ${ (props) => props.$childrenSize.carousel }px) + 113px);
   }
 
 `
@@ -56,7 +58,7 @@ export const CarouselWrapper = styled.div`
   z-index: 1;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
-    height: 100%;
+    height: calc((100vw - 60px) / 2 / 1.5);
     width: calc((100vw - 60px)/2);
   }
 `
@@ -113,6 +115,8 @@ export const Description = styled.p`
 
 export const StyledLi = styled.li`
   ${ Text };
+  padding-left: 10px;
+  list-style: inside;
 `
 
 export const StackWrapper = styled.ul`
@@ -129,4 +133,16 @@ export const Stack = styled.li`
   ${Text};
   border: 3px solid ${(props) => props.theme.componentsBorderColor};
   border-radius: 15px;
+`
+
+export const StyledA = styled.a`
+  ${Text};
+  text-decoration: underline;
+
+  &:focus {
+    outline-offset: 5px;
+    border-radius: 15px;
+    ${ focusRingBorder }
+    transition: color 0s;
+  }
 `

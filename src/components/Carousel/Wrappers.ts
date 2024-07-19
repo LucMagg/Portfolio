@@ -13,8 +13,9 @@ export const CarouselWrapper = styled.div`
 `
 
 export const CarouselSlide = styled.div`
+  transition: transform ease 1ms;
   @media (prefers-reduced-motion: no-preference) {
-    transition: transform ease 1000ms;
+    transition-duration: 1000ms;
   }
 `
 

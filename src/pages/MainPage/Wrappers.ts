@@ -18,4 +18,5 @@ export const H2 = styled.h2`
   ${Heading2};
   padding-left: 2%;
   padding-top: 10px;
+  z-index: 1;
 `

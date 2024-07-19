@@ -13,7 +13,7 @@ function slide(whichWay: 'left' | 'right', activeSlide: number, items: itemsType
     return target
 }
 
-const slideTimer = 3000
+const slideTimer = 5000
 
 export default function Carousel ({ items } : { items: itemsType} ) {    
   const [activeSlide, setActiveSlide] = useState(0)
