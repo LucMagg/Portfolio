@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Button, Text } from '../../../data/Theme/globalStyles'
+import { ComponentsBackground, InteractiveComponentsBorder, focusRingBorder, Text } from '../../../data/Theme/globalStyles'
 
 export const SectionWrapper = styled.div`
   display: flex;
@@ -21,11 +21,30 @@ export const StyledImg = styled.img`
   border: 1px solid ${ (props) => props.theme.componentsBorderColor };
 `
 
-export const DLButton = styled(Button)`
-  padding-inline: 20px;
-`
 
 export const StyledLink = styled(Link)`
+  border-width: 2px;
+  border-style: outset;
+  padding-inline: 10px;
   ${Text};
   text-decoration: none;
+
+  ${ComponentsBackground};    
+  ${InteractiveComponentsBorder};
+  border-radius: 15px;
+  cursor: pointer;
+
+  &:focus {
+    outline-offset: 2px;
+    border-radius: 15px;
+    ${focusRingBorder}
+    transition: color 0s;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    border-radius: 15px;
+    ${focusRingBorder}
+    transition: color 0s;
+  }
 `

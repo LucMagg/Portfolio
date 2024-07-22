@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Text } from '../../../data/Theme/globalStyles'
+import { Text, focusRingBorder } from '../../../data/Theme/globalStyles'
 
 export const ContactSectionWrapper = styled.div`
   display: flex;
@@ -12,15 +12,39 @@ export const ContactSectionWrapper = styled.div`
   z-index: 1;
 `
 
-export const StyledText = styled.p`
-  ${Text}
-  padding-left: 30px;
+export const ContactText = styled.div`
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
 `
 
-export const StyledA = styled.a`
-  color: ${(props) => props.theme.textColor};
-  text-decoration: underline;
-  font-weight: 600;
+export const SomeText = styled.span`
+  ${ Text };
+  min-width: fit-content;
+`
+
+export const LinkedInLink = styled.a`
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    outline-offset: 2px;
+    border-radius: 15px;
+    ${focusRingBorder}
+    transition: color 0s;
+  }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    border-radius: 15px;
+    ${focusRingBorder}
+    transition: color 0s;
+  }
 `
 
 export const ContactFormWrapper = styled.div`

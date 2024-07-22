@@ -52,45 +52,41 @@ export default function BurgerMenu ({ size }:{size : number }) {
     }
   }
 
+  const handleFocus = () => {
+    const focusableElements = document.querySelectorAll('a, button, input, textarea, [tabindex]')
+
+    focusableElements.forEach(element => {
+      const el = element as HTMLElement
+
+      if (menuRef.current && menuRef.current.contains(el)) return
+
+      if (menuIsOpen) {
+        const currentTabIndex = el.getAttribute('tabindex')
+        if (currentTabIndex !== '-1') {
+          el.setAttribute('data-original-tabindex', currentTabIndex || '')
+          el.setAttribute('tabindex', '-1')
+        }
+      } else {
+        const originalTabIndex = el.getAttribute('data-original-tabindex')
+        if (originalTabIndex !== null) {
+          if (originalTabIndex === '') {
+            el.removeAttribute('tabindex')
+          } else {
+            el.setAttribute('tabindex', originalTabIndex)
+          }
+          el.removeAttribute('data-original-tabindex')
+        }
+      }
+    })
+  }
+
   useEffect(() => {
     if (menuIsOpen) {
       document.addEventListener('keydown', handleKeyDown)
+      setTimeout(() => handleFocus(), 0)
     } else {
       document.removeEventListener('keydown', handleKeyDown)
-    }
-
-    const handleFocus = () => {
-      const focusableElements = document.querySelectorAll('a, button, input, textarea, [tabindex]')
-
-      focusableElements.forEach(element => {
-        const el = element as HTMLElement
-
-        if (menuRef.current?.contains(el)) return
-
-        if (menuIsOpen) {
-          if (el.getAttribute('tabindex') !== '-1') {
-            el.setAttribute('data-original-tabindex', el.getAttribute('tabindex') || '')
-            el.setAttribute('tabindex', '-1')
-          }
-        } else {
-          const originalTabIndex = el.getAttribute('data-original-tabindex')
-          if (originalTabIndex !== null) {
-            el.setAttribute('tabindex', originalTabIndex)
-            el.removeAttribute('data-original-tabindex')
-          } else {
-            el.removeAttribute('tabindex')
-          }
-        }
-      })
-    }
-
-    handleFocus()
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyDown)
-      if (menuIsOpen) {
-        handleFocus()
-      }
+      handleFocus()
     }
   }, [menuIsOpen])
 

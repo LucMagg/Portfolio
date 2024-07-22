@@ -110,8 +110,9 @@ i18n
             button: 'Voir plus...',
           },
           section4: {
-            text1: 'N\'hésitez pas à me contacter par mail à l\'adresse ',
-            text2: ' ou via ce formulaire :',
+            text1: 'N\'hésitez pas à me contacter via ',
+            ariaText1 : 'LinkedIn',
+            text2: ' ou par l\'intermédiaire  de ce formulaire :',
             contactForm : {
               lastname: 'Nom',
               firstname: 'Prénom',
@@ -271,7 +272,7 @@ i18n
             button: 'See more...'
           },
           section4: {
-            text1: 'Don\'t hesitate to contact me by email at ',
+            text1: 'Feel free to contact me via ',
             text2: ' or through this form:',
             contactForm : {
               lastname: 'Last name',
