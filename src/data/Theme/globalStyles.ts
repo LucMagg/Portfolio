@@ -94,4 +94,11 @@ export const Button = styled.button`
     ${focusRingBorder}
     transition: color 0s;
   }
+
+  &:focus-visible {
+    outline-offset: 2px;
+    border-radius: 15px;
+    ${focusRingBorder}
+    transition: color 0s;
+  }
 `

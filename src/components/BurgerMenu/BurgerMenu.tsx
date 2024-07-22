@@ -1,11 +1,12 @@
-import React, { useEffect, useState} from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useTheme } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
 import ThemeToggler from '../ThemeToggler/ThemeToggler'
 import LanguageToggler from '../LanguageToggler/LanguageToggler'
+import BackArrow from '../BackArrow/BackArrow'
 
-import { StyledLi, StyledButton, MenuWrapper, MenuListWrapper, CloseButton, NavListItemWrapper, StyledA, TogglersWrapper } from './Wrappers'
+import { StyledLi, StyledButton, MenuWrapper, MenuListWrapper, NavListItemWrapper, StyledA, TogglersWrapper } from './Wrappers'
 import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 
@@ -13,6 +14,7 @@ export default function BurgerMenu ({ size }:{size : number }) {
   const theme = useTheme()
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [animationClass, setAnimationClass] = useState('')
+  const menuRef = useRef<HTMLDivElement>(null)
 
   const { t } = useTranslation()
   const navItems = t('navitems', { returnObjects: true }) as Record<string, string>
@@ -39,7 +41,7 @@ export default function BurgerMenu ({ size }:{size : number }) {
   const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
     e.preventDefault()
     closeMenu()
-    scrollNavigate(anchor)
+    scrollNavigate('/', anchor)
   }
 
   const handleKeyDown = (e) => {
@@ -57,8 +59,38 @@ export default function BurgerMenu ({ size }:{size : number }) {
       document.removeEventListener('keydown', handleKeyDown)
     }
 
+    const handleFocus = () => {
+      const focusableElements = document.querySelectorAll('a, button, input, textarea, [tabindex]')
+
+      focusableElements.forEach(element => {
+        const el = element as HTMLElement
+
+        if (menuRef.current?.contains(el)) return
+
+        if (menuIsOpen) {
+          if (el.getAttribute('tabindex') !== '-1') {
+            el.setAttribute('data-original-tabindex', el.getAttribute('tabindex') || '')
+            el.setAttribute('tabindex', '-1')
+          }
+        } else {
+          const originalTabIndex = el.getAttribute('data-original-tabindex')
+          if (originalTabIndex !== null) {
+            el.setAttribute('tabindex', originalTabIndex)
+            el.removeAttribute('data-original-tabindex')
+          } else {
+            el.removeAttribute('tabindex')
+          }
+        }
+      })
+    }
+
+    handleFocus()
+
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
+      if (menuIsOpen) {
+        handleFocus()
+      }
     }
   }, [menuIsOpen])
 
@@ -71,16 +103,9 @@ export default function BurgerMenu ({ size }:{size : number }) {
         </svg>
       </StyledButton>
       {menuIsOpen && animationClass && (
-        <MenuWrapper className={ animationClass }>
+        <MenuWrapper className={ animationClass } ref={ menuRef }>
           <MenuListWrapper>
-            <CloseButton onClick={ handleOpenCloseMenu } aria-label={ t('burgerMenu.close') }>
-              <svg xmlns="http://www.w3.org/2000/svg" width={ 32 } height={ 32 } viewBox="0 0 448 512">
-                <path 
-                  d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
-                  fill={ theme.mainBackGroundColor }
-                />
-              </svg>
-            </CloseButton>
+            <StyledLi><BackArrow onClick={ handleOpenCloseMenu } ariaLabel={ t('burgerMenu.close') } size={ 32 } color={ theme.mainBackGroundColor }/></StyledLi>
             { Object.values(navItems).map((navItem) => {
               return (
                 <NavListItemWrapper key={ navItem }>

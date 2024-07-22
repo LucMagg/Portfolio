@@ -19,7 +19,7 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   overflow: hidden;
 `
 
-export const PortfolioCardLink = styled(Link)`
+export const PortfolioCardLink = styled.a`
   display: block;
   width: 100%;
   height: 100%;

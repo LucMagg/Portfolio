@@ -32,7 +32,8 @@
       ]
     },
     "stacks": [ "React", "React-router", "Sass" ],
-    "codeLink": "https://github.com/LucMagg/5_kasa"
+    "codeLink": "https://github.com/LucMagg/5_kasa",
+    "siteLink" : ""
   },
   {
     "id": "2",
@@ -67,7 +68,8 @@
       ]
     },
     "stacks": [ "Node", "Express", "MongoDB" ],
-    "codeLink": "https://github.com/LucMagg/6_mon_vieux_grimoire"
+    "codeLink": "https://github.com/LucMagg/6_mon_vieux_grimoire",
+    "siteLink" : ""
   },
   {
     "id": "3",
@@ -104,7 +106,8 @@
       ]
     },
     "stacks": [ "JavaScript", "HTML", "CSS" ],
-    "codeLink": "https://github.com/LucMagg/4_nina-carducci"
+    "codeLink": "https://github.com/LucMagg/4_nina-carducci",
+    "siteLink" : "https://lucmagg.github.io/4_nina-carducci/"
   },
   {
     "id": "4",
@@ -139,7 +142,8 @@
       ]
     },
     "stacks": [ "JavaScript", "HTML", "CSS" ],
-    "codeLink": "https://github.com/LucMagg/3_Portfolio-architecte-sophie-bluel"
+    "codeLink": "https://github.com/LucMagg/3_Portfolio-architecte-sophie-bluel",
+    "siteLink" : "https://lucmagg.github.io/3_Portfolio-architecte-sophie-bluel/"
   },
   {
     "id": "5",
@@ -172,6 +176,7 @@
       ]
     },
     "stacks": [ "HTML", "CSS" ],
-    "codeLink": "https://github.com/LucMagg/2_Booki"
+    "codeLink": "https://github.com/LucMagg/2_Booki",
+    "siteLink" : "https://lucmagg.github.io/2_Booki"
   }
 ]

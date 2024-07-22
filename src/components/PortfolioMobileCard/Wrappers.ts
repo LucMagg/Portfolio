@@ -19,7 +19,7 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   background-color: ${(props) => props.theme.componentBackGroundColor};
 `
 
-export const PortfolioCardLink =  styled(Link)`
+export const PortfolioCardLink =  styled.a`
   display: flex;
   flex-direction: column;
   width: 100%;

@@ -30,29 +30,14 @@ export const useScrollNavigate = () => {
   const navigate = useNavigate()
   const location = useLocation()
 
-  const scrollNavigate = (navItem?: string) => {
-    const amIHome = location.pathname === '/'
+  const scrollNavigate = (path: string, navItem: string) => {
+    const anchor = contractStr(navItem)
 
-    if (navItem) {
-      const anchor = contractStr(navItem)
-
-      if (amIHome) {
-        scrollToAnchor(anchor)
-      } else {
-        let p = new Promise((resolve) => { 
-          navigate('/') 
-          resolve(true)
-        })
-        p.then(() => { scrollToAnchor(anchor) })
-      }
-
-    } else {
-      if (!amIHome) {
-        navigate('/')
-      } else {
-        scrollToAnchor('top')
-      }
-    }
+    let p = new Promise((resolve) => { 
+      navigate(path) 
+      resolve(true)
+    })
+    p.then(() => { scrollToAnchor(anchor) })
   }
 
   return scrollNavigate

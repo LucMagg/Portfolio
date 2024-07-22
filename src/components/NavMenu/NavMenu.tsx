@@ -15,7 +15,7 @@ export default function NavMenu() {
 
   const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
     e.preventDefault()
-    scrollNavigate(anchor)
+    scrollNavigate('/', anchor)
   }
 
   return (

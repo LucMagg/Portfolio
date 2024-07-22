@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading2, Heading3, Text, focusRingBorder } from '../../data/Theme/globalStyles'
+import { Heading2, Heading3, Text, Button } from '../../data/Theme/globalStyles'
 
 
 type PageWrapperTypes = {
@@ -10,6 +10,7 @@ type PageWrapperTypes = {
 }
 
 export const PageWrapper = styled.div<PageWrapperTypes>`
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -130,19 +131,22 @@ export const StackWrapper = styled.ul`
 export const Stack = styled.li`
   list-style: none;
   padding-inline: 5px;
-  ${Text};
+  ${ Text };
   border: 3px solid ${(props) => props.theme.componentsBorderColor};
   border-radius: 15px;
 `
 
-export const StyledA = styled.a`
-  ${Text};
-  text-decoration: underline;
+export const LinksWrapper = styled.div`
+  width: 100%;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+`
 
-  &:focus {
-    outline-offset: 5px;
-    border-radius: 15px;
-    ${ focusRingBorder }
-    transition: color 0s;
-  }
+export const StyledLinkButton = styled(Button)`
+  padding-inline: 15px;
+  ${ Text };
 `

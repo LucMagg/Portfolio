@@ -16,7 +16,7 @@ export default function NavBar() {
 
   const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
     e.preventDefault()
-    scrollNavigate(anchor)
+    scrollNavigate('/', anchor)
   }
 
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)

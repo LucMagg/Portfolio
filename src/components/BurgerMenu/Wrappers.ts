@@ -35,7 +35,7 @@ export const MenuWrapper = styled.div`
   }
 `
 
-export const MenuListWrapper = styled.div`
+export const MenuListWrapper = styled.ul`
   width: 100%;
   height: 100%;
   position: relative;
@@ -45,15 +45,6 @@ export const MenuListWrapper = styled.div`
   justify-content: center;
   gap: 20px;
 `
-
-export const CloseButton = styled.button`
-  border: none;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background-color: ${ (props) => props.theme.textColor };
-`
-
 
 export const NavListItemWrapper = styled.li`
   list-style: none;
@@ -76,6 +67,13 @@ export const StyledA = styled.a`
       transition: scale 0.4s;
     }
   }  
+
+  &:focus {
+    outline-offset: 5px;
+    border-radius: 10px;
+    border-color: ${props => props.theme.focusRingColor};
+    transition: color 0s;
+  }
 `
 
 export const TogglersWrapper = styled.li`

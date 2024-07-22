@@ -130,6 +130,7 @@ i18n
               backend: 'Backend',
               all: "Tous"
             },
+            backArrow: 'retourner à la page des projets',
             carouselAltButton: {
               previous: 'précédent',
               next: 'suivant'
@@ -137,7 +138,10 @@ i18n
             description: "Description :",
             skills: 'Compétences acquises :',
             technos: 'Technologies utilisées :',
-            link: 'Lien vers le repo :'
+            link: {
+              toCode: 'Voir le repo',
+              toWebSite: 'Visiter le site'
+            }
           },
           counter: {
             years: {
@@ -287,6 +291,7 @@ i18n
               backend: 'Backend',
               all: "All"
             },
+            backArrow: 'back to projects page',
             carouselAltButton: {
               previous: 'previous',
               next: 'next'
@@ -294,7 +299,10 @@ i18n
             description: 'Description:',
             skills: 'Acquired skills:',
             technos: 'Used technologies:',
-            link: 'Link to the repo:'
+            link: {
+              toCode: 'View Repo',
+              toWebSite: 'Visit Site'
+            }
           },
           counter: {
             years: {

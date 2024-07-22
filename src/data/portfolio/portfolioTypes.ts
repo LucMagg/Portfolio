@@ -18,4 +18,5 @@ export type PortfolioItemType = {
   }
   stacks: string[]
   codeLink: string
+  siteLink: string
 }
