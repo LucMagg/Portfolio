@@ -87,6 +87,7 @@ export const Button = styled.button`
   ${ComponentsBackground};
   ${InteractiveComponentsBorder};
   border-radius: 15px;
+  cursor: pointer;
 
   &:focus {
     outline-offset: 2px;
