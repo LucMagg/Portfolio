@@ -178,5 +178,39 @@
     "stacks": [ "HTML", "CSS" ],
     "codeLink": "https://github.com/LucMagg/2_Booki",
     "siteLink" : "https://lucmagg.github.io/2_Booki"
+  },
+  {
+    "id": "6",
+    "majorProject": false,
+    "type": "backend",
+    "title": "FD-bot",
+    "pics": ["FD-bot_commands.jpg","FD-bot_hero.jpg","FD-bot_item.jpg","FD-bot_pet.jpg","FD-bot_talent.jpg"],
+    "fr": {
+      "shortDescription": "Bot discord pour un jeu mobile",
+      "pics_titles": ["Commandes du bot","Commande /hero","Commande /item","Commande /pet","Commande /talent"],
+      "fullDescription": [
+        "Ce projet est un projet personnel, grâce auquel j'ai perfectionné mes connaissances en Python.",
+        "Il s'agit d'un bot pour Discord permettant d'afficher différentes informations au sujet du jeu sur mobile Friends & Dragons, lesquelles sont collectées par le bot depuis le wiki du jeu."
+      ],
+      "skills": [
+        "Parser du HTML avec Python et organiser la data récoltée en JSON",
+        "Utiliser l'API discord pour intégrer les différentes commandes aux serveurs sur lesquels le bot est installé"
+      ]
+    },
+    "en": {
+      "shortDescription": "Discord bot for a mobile game",
+      "pics_titles": ["Bot commands","Command /hero","Command /item","Command /pet","Command /talent"],
+      "fullDescription": [
+        "This project is a personal one through which I improved my knowledge of Python.",
+        "This is a bot for Discord to display different informations about the mobile game Friends & Dragons, which are collected by the bot from the game's wiki."
+      ],
+      "skills": [
+        "Parse HTML with Python and organize the collected data into JSON",
+        "Use the Discord API to integrate the different commands to the servers on which the bot is installed"
+      ]
+    },
+    "stacks": [ "Python", "Discord" ],
+    "codeLink": "https://github.com/LucMagg/FDbot",
+    "siteLink" : ""
   }
 ]
