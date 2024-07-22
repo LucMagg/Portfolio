@@ -149,4 +149,5 @@ export const LinksWrapper = styled.div`
 export const StyledLinkButton = styled(Button)`
   padding-inline: 15px;
   ${ Text };
+  cursor: pointer;
 `
