@@ -16,7 +16,6 @@ export default function ErrorPage() {
   const updatePageHeight = () => {
     if (statusRef.current && messageRef.current && linkRef.current) {
       setPageHeight(statusRef.current.offsetHeight + messageRef.current.offsetHeight + linkRef.current.offsetHeight)
-      console.log(pageHeight)
     }
   }
 
