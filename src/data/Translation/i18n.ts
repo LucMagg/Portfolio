@@ -19,6 +19,13 @@ i18n
           logo: {
             alt: 'Logo du site web'
           },
+          meta:{
+            title: 'Portfolio de Luc Maggiotto',
+            description: 'Développeur full-stack basé à Armentières, je conçois des solutions web performantes. Explorez mon portfolio pour découvrir mes projets et compétences.',
+            language: 'fr-FR',
+            ogTitle: 'Luc Maggiotto - Développeur full-stack',
+            script: '{"@context": "https://schema.org", "@type": "Person", "name": "Luc Maggiotto", "jobTitle": "Développeur full-stack", "description": "Développeur full-stack basé à Armentières, je conçois des solutions web performantes. Explorez mon portfolio pour découvrir mes projets et compétences.", "image": "https://lucmagg.github.io/Portfolio/Me.jpg", "url": "https://lucmagg.github.io/Portfolio/", "email": "luc.maggiotto@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Armentières", "postalCode": "59280", "addressCountry": "FR"}, "sameAs": ["https://www.linkedin.com/in/luc-maggiotto-357159316/", "https://github.com/LucMagg"], "mainEntityOfPage": {"@type": "WebSite", "name": "Portfolio de Luc Maggiotto", "url": "https://lucmagg.github.io/Portfolio/"}}'
+          },
           navitems: {
             nav1: 'À propos',
             nav2: 'Portfolio',
@@ -179,9 +186,16 @@ i18n
       },
       en: {
         translation: {
-          h1: 'Luc Maggiotto Portfolio',
+          h1: 'Luc Maggiotto\'s Portfolio',
           logo: {
             alt: 'Website logo'
+          },
+          meta:{
+            title: 'Luc Maggiotto\'s Portfolio',
+            description: 'Full-stack developer based in Armentières, I design high-performance web solutions. Explore my portfolio to discover my projects and skills.',
+            language: 'en-GB',
+            ogTitle: 'Luc Maggiotto - Full-stack Developer',
+            script: '{"@context": "https://schema.org", "@type": "Person", "name": "Luc Maggiotto", "jobTitle": "Full-stack Developer", "description": "Full-stack developer based in Armentières, I design high-performance web solutions. Explore my portfolio to discover my projects and skills.", "image": "https://lucmagg.github.io/Portfolio/Me.jpg", "url": "https://lucmagg.github.io/Portfolio/", "email": "luc.maggiotto@gmail.com", "address": {"@type": "PostalAddress", "addressLocality": "Armentières", "postalCode": "59280", "addressCountry": "FR"}, "sameAs": ["https://www.linkedin.com/in/luc-maggiotto-357159316/", "https://github.com/LucMagg"], "mainEntityOfPage": {"@type": "WebSite", "name": "Portfolio de Luc Maggiotto", "url": "https://lucmagg.github.io/Portfolio/"}}'
           },
           navitems: {
             nav1: 'About me',

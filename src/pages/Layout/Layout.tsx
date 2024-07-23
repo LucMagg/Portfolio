@@ -11,6 +11,7 @@ import { AppContainer } from './Wrappers'
 import '../../data/Translation/i18n'
 import OldSchoolBackground from '../../components/OdlSchoolBackground/OldSchoolBackground'
 import { FooterProvider } from '../../hooks/useFooterContext'
+import MetaManager from '../../components/MetaManager/MetaManager'
 
 
 type LayoutTypes = {
@@ -67,6 +68,7 @@ export default function Layout({ children }: LayoutTypes) {
       <ThemeProvider theme={ theme }>
         <FooterProvider>
           <AppContainer>
+            <MetaManager />
             <Header />
             <main>
               {children ?? <Outlet />}
