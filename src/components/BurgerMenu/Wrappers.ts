@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading3 } from '../../data/Theme/globalStyles'
+import { FlexColumnCenter, Heading3, Focus } from '../../data/Theme/globalStyles'
 import { slideFromTopRightCorner, slideToTopRightCorner } from '../../assets/animations'
 
 
@@ -39,11 +39,8 @@ export const MenuListWrapper = styled.ul`
   width: 100%;
   height: 100%;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   gap: 20px;
+  ${ FlexColumnCenter };
 `
 
 export const NavListItemWrapper = styled.li`
@@ -56,31 +53,28 @@ export const StyledA = styled.a`
   width: 100%;
   text-decoration: none;
   padding-bottom: 3px;
-  ${Heading3};
-  color: ${props => props.theme.mainBackGroundColor};
-  background-color: ${props => props.theme.textColor};
+  ${ Heading3 };
+  color: ${ (props) => props.theme.mainBackGroundColor };
+  background-color: ${ (props) => props.theme.textColor };
 
   &:hover {
-    color: ${props => props.theme.highContrastTextColor};
+    color: ${ (props) => props.theme.highContrastTextColor};
     transform: scale(1.1);
     @media (prefers-reduced-motion: no-preference) {
       transition: scale 0.4s;
     }
   }  
 
-  &:focus {
+  ${ Focus };
+  &:focus, &:focus-visible, &:focus-within {
     outline-offset: 5px;
     border-radius: 10px;
-    border-color: ${props => props.theme.focusRingColor};
-    transition: color 0s;
   }
 `
 
 export const TogglersWrapper = styled.li`
-  display: flex;
-  flex-direction: column;
+  ${ FlexColumnCenter };
   gap: 10px;
-  align-items: center;
   min-width: 150px;
   list-style: none;
 `

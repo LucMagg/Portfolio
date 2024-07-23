@@ -1,10 +1,8 @@
 import styled from 'styled-components'
+import { FlexCenter, FlexColumnCenter } from '../../data/Theme/globalStyles'
 
 export const ProjectsWrapper = styled.ul`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${ FlexColumnCenter };
   padding-inline: 10px;   
   gap: 10px;
   width: calc(100vw - 10px);
@@ -20,8 +18,7 @@ export const PortfolioCardWrapper = styled.li`
   width: 100%;
   height: calc((100vw - 30px) / 1.5);
   max-height: 468px;
-  display: flex;
-  justify-content: center;
+  ${ FlexCenter };
   list-style: none;
 
   @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {

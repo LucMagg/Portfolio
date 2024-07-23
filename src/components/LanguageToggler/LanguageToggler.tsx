@@ -15,7 +15,7 @@ export default function LanguageToggler({ size }) {
 
   return (
     <LanguageTogglerWrapper size={ size } onClick={handleChangeLanguage}>
-      <WorldSvg size= { 25 } />
+      <WorldSvg size= { 26 } />
       <StyledSpan>{t('language')}</StyledSpan>
     </LanguageTogglerWrapper>
   )

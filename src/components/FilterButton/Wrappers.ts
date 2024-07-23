@@ -7,7 +7,7 @@ export const FilterButtonWrapper = styled.li`
 ` 
 
 export const Filter = styled(Button)<{ $isactive: boolean }>`
-  ${Text};
+  ${ Text };
   padding-inline: 10px;
   min-width: 90px;
   background-color: ${props => props.$isactive ? props.theme.textColor : props.theme.componentBackGroundColor};

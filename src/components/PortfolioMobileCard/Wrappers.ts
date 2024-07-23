@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
-import { Heading3, Text } from '../../data/Theme/globalStyles'
+import { Heading3, Text, ComponentsBackground, FlexColumnCenter, FlexRowCenter } from '../../data/Theme/globalStyles'
 import { themeTypes } from '../../data/Theme/themes'
 
 
@@ -13,15 +13,14 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   width: 100%;
   height: 100%;
   position: relative;
-  border: ${(props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor};
+  border: ${ (props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor };
   border-radius: 10px;
   overflow: hidden;
-  background-color: ${(props) => props.theme.componentBackGroundColor};
+  ${ ComponentsBackground };
 `
 
 export const PortfolioCardLink =  styled.a`
-  display: flex;
-  flex-direction: column;
+  ${ FlexColumnCenter };
   width: 100%;
   height: 100%;
   text-decoration: none;  
@@ -38,9 +37,7 @@ export const DescriptionWrapper = styled.div`
   width: 100%;
   height: 100px;
   min-height: fit-content;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  ${ FlexColumnCenter };
   align-items: flex-start;
   gap: 2px;
   border-top: 3px solid ${(props) => props.theme.componentsBorderColor};
@@ -48,20 +45,19 @@ export const DescriptionWrapper = styled.div`
 `
 
 export const DescriptionTitle = styled.p`
-  ${Text};
+  ${ Text };
   font-weight: 500;
   width: 100%;
 `
 
 export const DescriptionText = styled.p`
   padding-inline: 10px;
-  ${Text};
+  ${ Text };
 `
 
 export const DescriptionStackWrapper = styled.ul`
   padding-top: 5px;
-  display: flex;
-  flex-direction: row;
+  ${ FlexRowCenter };
   align-items: flex-start;
   gap: 5px;
 `
@@ -69,8 +65,8 @@ export const DescriptionStackWrapper = styled.ul`
 export const StackWrapper = styled.li`
   list-style: none;
   padding-inline: 5px;
-  ${Text};
-  border: 3px solid ${(props) => props.theme.componentsBorderColor};
+  ${ Text };
+  border: 3px solid ${ (props) => props.theme.componentsBorderColor };
   border-radius: 15px;
 `
 

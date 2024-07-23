@@ -7,11 +7,11 @@ export const AboutWrapper = styled.div`
 `
 
 export const Paragraph = styled.p`
-  ${Text}
+  ${ Text };
 `
 
 export const WikipediaLink = styled.a`
-  color: ${(props) => props.theme.textColor};
+  color: ${ (props) => props.theme.textColor };
   text-decoration: underline;
   font-weight: 600;
 `

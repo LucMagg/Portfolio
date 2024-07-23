@@ -1,6 +1,5 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
-import { Heading3, Text } from '../../data/Theme/globalStyles'
+import { Heading3, Text, ComponentsBackground, FlexColumnCenter, FlexRowCenter } from '../../data/Theme/globalStyles'
 import { themeTypes } from '../../data/Theme/themes'
 
 
@@ -14,7 +13,7 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   max-width: 700px;
   height: 100%;
   position: relative;
-  border: ${(props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor};
+  border: ${ (props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor };
   border-radius: 10px;
   overflow: hidden;
 `
@@ -31,7 +30,7 @@ export const PortfolioCardPic = styled.img`
   height: 100%;
   object-fit: contain;
   display: block;
-  background-color: ${(props) => props.theme.componentBackGroundColor};
+  ${ ComponentsBackground };
 `
 
 export const DescriptionOnHover = styled.div`
@@ -40,7 +39,7 @@ export const DescriptionOnHover = styled.div`
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: ${(props) => props.theme.onHoverBackGroundColor};
+  background-color: ${ (props) => props.theme.onHoverBackGroundColor };
   opacity: 0;
   transition: opacity 0.3s ease;
 
@@ -52,37 +51,32 @@ export const DescriptionOnHover = styled.div`
 export const DescriptionWrapper = styled.div`
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  ${ FlexColumnCenter };
   gap: 20px;
 `
 
 export const DescriptionTitle = styled.p`
-  ${Heading3};
+  ${ Heading3 };
   width: 100%;
   text-align: center;
 `
 
 export const DescriptionText = styled.p`
   padding-inline: 10px;
-  ${Text}
+  ${ Text };
 `
 
 export const DescriptionStackWrapper = styled.div`
   padding-top: 30px;
-  display: flex;
-  flex-direction: row;
+  ${ FlexRowCenter };
   justify-content: flex-end;
-  align-items: center;
   gap: 20px;
 `
 
 export const StackWrapper = styled.p`
   padding-inline: 15px;
-  ${Text}
-  border: 3px solid ${(props) => props.theme.componentsBorderColor};
+  ${ Text };
+  border: 3px solid ${ (props) => props.theme.componentsBorderColor};
   border-radius: 15px;
 `
 
@@ -90,5 +84,5 @@ export const LearnMore = styled.p`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  ${Text};
+  ${ Text };
 `

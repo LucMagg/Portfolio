@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { focusRingBorder } from '../../data/Theme/globalStyles'
+import { Focus, FlexCenter } from '../../data/Theme/globalStyles'
 
 
 type ButtonTypes = {
@@ -7,9 +7,6 @@ type ButtonTypes = {
 }
 
 export const StyledButton = styled.button<ButtonTypes>`
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border: none;
   width: ${ (props) => props.$size + 4}px;
   aspect-ratio: 1;
@@ -20,10 +17,6 @@ export const StyledButton = styled.button<ButtonTypes>`
   cursor: pointer;
   z-index: 1;
 
-  &:focus {
-    outline-offset: 2px;
-    border-radius: 15px;
-    ${ focusRingBorder }
-    transition: color 0s;
-  }
+  ${ FlexCenter };
+  ${ Focus };
 `

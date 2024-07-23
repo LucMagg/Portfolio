@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { focusRingBorder } from '../../data/Theme/globalStyles'
+import { FlexColumnCenter, Focus, focusRingBorder } from '../../data/Theme/globalStyles'
 
 
 export const CarouselWrapper = styled.div`
@@ -14,6 +14,7 @@ export const CarouselWrapper = styled.div`
 
 export const CarouselSlide = styled.div`
   transition: transform ease 1ms;
+  
   @media (prefers-reduced-motion: no-preference) {
     transition-duration: 1000ms;
   }
@@ -21,10 +22,7 @@ export const CarouselSlide = styled.div`
 
 
 export const CarouselButton = styled.button`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  ${ FlexColumnCenter };
   position: absolute;
   width: 60px;
   height: 60px;
@@ -49,11 +47,12 @@ export const CarouselButton = styled.button`
     right: 0;
   }
 
-  &:focus {
+  ${ Focus };
+
+  &:focus, &:focus-visible, &:focus-within {
     outline-offset: -14px;
     border-radius: 50%;
-    ${ focusRingBorder };
-    transition: color 0s;
+
     @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
       outline-offset: -29px;
     }

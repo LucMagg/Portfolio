@@ -13,7 +13,8 @@ import BackArrow from '../../components/BackArrow/BackArrow'
 
 
 type ChildrenSizeTypes = {
-  desc: number;
+  title: number
+  desc: number
   carousel: number
 }
 
@@ -24,10 +25,11 @@ export default function PortfolioFocusPage() {
   const theme = useTheme()
   const navigate = useScrollNavigate()
 
+  const titleRef = useRef<HTMLDivElement>(null)
   const descriptionDivRef = useRef<HTMLDivElement>(null)
   const carouselDivRef = useRef<HTMLDivElement>(null)
   const pageRef = useRef(null)
-  const [childrenSize, setChildrenSize] = useState<ChildrenSizeTypes>({desc: 0, carousel: 0})
+  const [childrenSize, setChildrenSize] = useState<ChildrenSizeTypes>({title: 0, desc: 0, carousel: 0})
 
   const slides = (project: PortfolioItemType): ReactNode[] => {
     const numberOfSlides = project.pics.length
@@ -38,7 +40,7 @@ export default function PortfolioFocusPage() {
           <PicWrapper src={ `/images/${ project.title }/${ pic }` } alt= { `${ project.title } ${ index }` } />
           <SlideIndex>
             { t(`portfolio.${ project.id }.pics_titles.${ index }`) }
-            { project.pics.length > 1 ? ` - ${ index + 1}/${ numberOfSlides }` : null }
+            { project.pics.length > 1 ? ` - ${ index + 1 }/${ numberOfSlides }` : null }
           </SlideIndex>
         </SlideWrapper>
       )
@@ -78,8 +80,8 @@ export default function PortfolioFocusPage() {
   
 
   const updatePageHeight = () => {
-    if (descriptionDivRef.current && carouselDivRef.current) {
-      setChildrenSize({desc: descriptionDivRef.current.offsetHeight, carousel: carouselDivRef.current.offsetHeight})
+    if (titleRef.current && descriptionDivRef.current && carouselDivRef.current) {
+      setChildrenSize({title: titleRef.current.offsetHeight, desc: descriptionDivRef.current.offsetHeight, carousel: carouselDivRef.current.offsetHeight})
     }
   }
 
@@ -99,7 +101,7 @@ export default function PortfolioFocusPage() {
   return (
     <Scroll.Element name={'top'}>
       <PageWrapper ref={ pageRef } $childrenSize={ childrenSize }>
-        <StyledH2>{ project.title }</StyledH2>
+        <StyledH2 ref={ titleRef }>{ project.title }</StyledH2>
         <BackArrow onClick={ handleBackClick } ariaLabel={ t('portfolio.backArrow') } size= { 32 } color = { theme.textColor } />
         <ProjectDetailsWrapper>
           <CarouselWrapper ref={ carouselDivRef }>

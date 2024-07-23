@@ -7,7 +7,7 @@ import { lightTheme, darkTheme } from '../../data/Theme/themes'
 
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
-import { AppContainer, GlobalStyle, Main } from './Wrappers'
+import { AppContainer } from './Wrappers'
 import '../../data/Translation/i18n'
 import OldSchoolBackground from '../../components/OdlSchoolBackground/OldSchoolBackground'
 import { FooterProvider } from '../../hooks/useFooterContext'
@@ -66,13 +66,12 @@ export default function Layout({ children }: LayoutTypes) {
     <ThemeContext.Provider value={ value }>
       <ThemeProvider theme={ theme }>
         <FooterProvider>
-          <GlobalStyle />
           <AppContainer>
             <Header />
-            <Main>
+            <main>
               {children ?? <Outlet />}
               <OldSchoolBackground quadNumber={ 2 } speed={ 200 } streakNumber={ 5 } />
-            </Main>
+            </main>
             <Footer />
           </AppContainer>
         </FooterProvider>

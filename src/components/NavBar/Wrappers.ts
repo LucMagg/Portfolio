@@ -1,27 +1,24 @@
 import styled from 'styled-components'
 import { infiniteScale } from '../../assets/animations'
+import { FlexRowCenter, Focus } from '../../data/Theme/globalStyles'
 
 
 export const NavWrapper = styled.nav`
-  display: flex;
-  flex-direction: row;
+  ${ FlexRowCenter };
   justify-content: space-around;
-  align-items: center;
   width: 100%;
 `
 
 export const LinkListWrapper = styled.ul`
-  display: flex;
-  flex-direction: row;
+  ${ FlexRowCenter };
   justify-content: space-between;
-  align-items: center;
   gap: 20px;
   width: 90%;
 `
 
 export const LogoWrapper = styled.li`
   list-style: none;
-  height: ${props => props.theme.headerMobileHeight - 20}px;
+  height: ${ (props) => props.theme.headerMobileHeight - 20 }px;
   aspect-ratio: 1;
   &:hover {
     @media (prefers-reduced-motion: no-preference) {
@@ -29,8 +26,8 @@ export const LogoWrapper = styled.li`
     }
   }
 
-  @media (min-width: ${(props) => props.theme.mobileBreakpoint}px) {
-    height: ${props => props.theme.headerNormalHeight - 30}px;
+  @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
+    height: ${ (props) => props.theme.headerNormalHeight - 30 }px;
   }
 `
 
@@ -39,20 +36,15 @@ export const LogoLink = styled.a`
   width: 100%;
   text-decoration: none;
   padding: 0;
-  background-color: ${props => props.theme.headerBackgroundColor};
+  background-color: ${ (props) => props.theme.headerBackgroundColor };
 
   &:hover {
-    color: ${props => props.theme.highContrastTextColor};
+    color: ${ (props) => props.theme.highContrastTextColor };
     transform: scale(1.1);
     @media (prefers-reduced-motion: no-preference) {
       transition: scale 0.4s;
     }
   }
 
-  &:focus {
-    outline-offset: 5px;
-    border-radius: 10px;
-    border-color: ${props => props.theme.focusRingColor};
-    transition: color 0s;
-  }
+  ${ Focus };
 `

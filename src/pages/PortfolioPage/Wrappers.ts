@@ -1,11 +1,10 @@
 import styled from 'styled-components'
+import { FlexColumnCenter, FlexRowCenter } from '../../data/Theme/globalStyles'
 
 
 export const PortfolioPageWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${ FlexColumnCenter };
   justify-content: start;
-  align-items: center;
   gap: 20px;
   min-height: 100vh;
   padding-bottom: 20px;
@@ -15,12 +14,9 @@ export const PortfolioPageWrapper = styled.div`
 export const FilterWrapper = styled.ul`
   width: 100%;
   padding-block: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  ${ FlexRowCenter };
   gap: 10px;
-  border-bottom: 1px solid ${(props) => props.theme.componentsBorderColor};
-  background-color: ${(props) => props.theme.headerBackGroundColor};
+  border-bottom: 1px solid ${ (props) => props.theme.componentsBorderColor };
+  background-color: ${ (props) => props.theme.headerBackGroundColor };
   z-index: 1;
 `

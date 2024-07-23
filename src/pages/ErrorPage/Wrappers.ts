@@ -1,16 +1,25 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { Heading2, Heading3, Text } from '../../data/Theme/globalStyles'
+import { FlexColumnCenter, Heading2, Heading3, Text } from '../../data/Theme/globalStyles'
 
 
-export const ErrorWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 140px;
-  padding-block: 90px;
+type ErrorWrapperTypes = {
+  $pageHeight: number
+}
+
+export const ErrorWrapper = styled.div<ErrorWrapperTypes>`
+  ${ FlexColumnCenter };
+  gap: 100px;
+  padding-block: 80px;
+  z-index: 1;
+  ${ Heading2 };
+  height: max(calc(100vh - ${ (props) => props.theme.headerMobileHeight + props.theme.footerHeight }px), ${ (props) => props.$pageHeight }px + 360px);
+  min-height: fit-content;
+
+  @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
+    height: max(calc(100vh - ${ (props) => props.theme.headerNormalHeight + props.theme.footerHeight }px), ${ (props) => props.$pageHeight }px + 360px);
+  }
 `
 
 export const H2 = styled.h2`
@@ -18,25 +27,38 @@ export const H2 = styled.h2`
 `
 
 export const Status = styled.div`
-  ${Heading2};
-  font-size: 288px;
-  line-height: 263px;
+  font-size: 96px;
+  line-height: 99px;  
+  z-index: 1;
+
+  @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
+    font-size: 288px;
+    line-height: 263px;
+  }
 `
 
 export const ErrorMessageWrapper = styled.div`
-  ${Heading3};
-  font-size: 36px;
+  font-size: 24px;
   padding-inline: 20px;
+  z-index: 1;
+
+  @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
+    font-size: 32px;
+  }
+
 `
 
 export const ErrorMessageBlock = styled.span`
-  @media (max-width: ${(props) => props.theme.mobileBreakpoint}) {
-    display: block;
+  ${ FlexColumnCenter };
+
+  @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
+    display: inline;
   }
 `
 
 export const StyledLink = styled(Link)`
-  ${Text};
+  ${ Text };
   text-decoration: none;
-  
+  cursor: pointer;  
+  z-index: 1;
 `
