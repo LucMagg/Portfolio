@@ -61,8 +61,6 @@ export const TextContent = styled.p`
   padding-left: 10px;
   padding-bottom: 10px;
   ${ Text };
-  font-size: 20px;
-  font-style: italic;
   max-width: 300px;
 
   @media (min-width: ${ (props) => props.theme.mobileBreakpoint }px) {
