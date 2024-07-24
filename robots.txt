@@ -1,0 +1,4 @@
+User-agent: *
+Allow: *
+
+Sitemap: https://lucmagg.github.io/Portfolio/sitemap.txt
