@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import PortfolioDesktopCard from '../PortfolioDesktopCard/PortfolioDesktopCard'
-import PortfolioMobileCard from '../PortfolioMobileCard/PorfolioMobileCard'
+import PortfolioCard from '../PortfolioCard/PortfolioCard'
 import data from '../../data/portfolio/portfolio.json'
 import { commonTheme } from '../../data/Theme/themes'
 
@@ -27,7 +26,7 @@ export default function Portfolio({ mainPage, filter }: { mainPage: boolean, fil
         if ((!mainPage && (item.type === filter || filter === 'all')) || (item.majorProject && mainPage))  {
           return (
             <PortfolioCardWrapper key={ item.title }>
-              { width > commonTheme.tabletBreakpoint ? <PortfolioDesktopCard item={ item } /> : <PortfolioMobileCard item={ item } /> }
+              <PortfolioCard item={ item } type={ width > commonTheme.tabletBreakpoint ? "desktop" : "mobile" } />
             </PortfolioCardWrapper>
           )
         }
