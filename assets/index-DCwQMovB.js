@@ -487,8 +487,6 @@ Error generating stack: `+o.message+`
   padding-left: 10px;
   padding-bottom: 10px;
   ${ue};
-  font-size: 20px;
-  font-style: italic;
   max-width: 300px;
 
   @media (min-width: ${e=>e.theme.mobileBreakpoint}px) {
