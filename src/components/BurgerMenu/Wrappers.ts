@@ -14,6 +14,9 @@ export const StyledButton = styled.button`
   box-sizing: content-box;
   background-color: ${ (props) => props.theme.headerBackGroundColor };
   height: ${ (props) => props.theme.headerMobileHeight - 20 }px;
+  cursor: pointer;
+
+  ${ Focus };
 `
 
 export const MenuWrapper = styled.div`
@@ -42,40 +45,4 @@ export const MenuListWrapper = styled.ul`
   position: relative;
   gap: 20px;
   ${ FlexColumnCenter };
-`
-
-export const NavListItemWrapper = styled.li`
-  list-style: none;
-  width: fit-content;
-`
-
-export const StyledA = styled(Link)`
-  height: 100%;
-  width: 100%;
-  text-decoration: none;
-  padding-bottom: 3px;
-  ${ Heading3 };
-  color: ${ (props) => props.theme.mainBackGroundColor };
-  background-color: ${ (props) => props.theme.textColor };
-
-  &:hover {
-    color: ${ (props) => props.theme.highContrastTextColor};
-    transform: scale(1.1);
-    @media (prefers-reduced-motion: no-preference) {
-      transition: scale 0.4s;
-    }
-  }  
-
-  ${ Focus };
-  &:focus, &:focus-visible, &:focus-within {
-    outline-offset: 5px;
-    border-radius: 10px;
-  }
-`
-
-export const TogglersWrapper = styled.li`
-  ${ FlexColumnCenter };
-  gap: 10px;
-  min-width: 150px;
-  list-style: none;
 `

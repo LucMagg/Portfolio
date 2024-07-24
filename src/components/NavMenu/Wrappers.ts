@@ -3,31 +3,36 @@ import { Link } from 'react-router-dom'
 import { FlexColumnCenter, Focus, Heading3 } from '../../data/Theme/globalStyles'
 
 
+type LinkProps = {
+  $color: string
+}
+
 export const NavListItemWrapper = styled.li`
   list-style: none;
   width: fit-content;
 `
 
-export const StyledA = styled(Link)`
+export const StyledLink = styled(Link)<LinkProps>`
+  display: block;
   height: 100%;
   width: 100%;
   text-decoration: none;
   padding-bottom: 3px;
   ${ Heading3 };
-  background-color: ${ (props) => props.theme.headerBackgroundColor };
+  color: ${ (props) => props.$color };
 
   &:hover {
-    color: ${ (props) => props.theme.highContrastTextColor };
-    transform: scale(2);
-    @media (prefers-reduced-motion: no-preference) {
-      transition: scale 0.4s ease;
-    }
+    transform: scale(1.5);
   }
 
   ${ Focus };
   &:focus, &:focus-visible, &:focus-within {
     outline-offset: 5px;
     border-radius: 10px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    transition: transform 0.4s ease !important;
   }
 `
 

@@ -42,7 +42,7 @@ export default function NavBar() {
             <Logo size={ svgSize } />
           </LogoLink>
         </LogoWrapper>
-        { windowWidth >= theme.mobileBreakpoint ? <NavMenu /> : <BurgerMenu size={ svgSize }/> }
+        { windowWidth >= theme.mobileBreakpoint ? <NavMenu onLinkClick={ handleClick } color={ theme.textColor }/> : <BurgerMenu size={ svgSize }/> }
       </LinkListWrapper>
     </NavWrapper>
   )

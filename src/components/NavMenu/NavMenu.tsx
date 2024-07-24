@@ -4,28 +4,29 @@ import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 import ThemeToggler from '../ThemeToggler/ThemeToggler'
 import LanguageToggler from '../LanguageToggler/LanguageToggler'
-import { NavListItemWrapper, StyledA, TogglersWrapper } from './Wrappers'
+import { NavListItemWrapper, StyledLink, TogglersWrapper } from './Wrappers'
 
+type NavMenuProps = {
+  onLinkClick: (e: React.MouseEvent<HTMLElement>, navItem: string) => void
+  color: string
+}
 
-export default function NavMenu() {
+export default function NavMenu({ onLinkClick, color }: NavMenuProps) {
   const { t } = useTranslation()
   const navItems = t('navitems', { returnObjects: true }) as Record<string, string>  
 
   const scrollNavigate = useScrollNavigate()
 
-  const handleClick = (e: React.MouseEvent<HTMLElement>, anchor: string) => {
-    e.preventDefault()
-    scrollNavigate('/', anchor)
-  }
+  
 
   return (
     <>
       { Object.values(navItems).map((navItem) => {
         return (
           <NavListItemWrapper key={ navItem }>
-            <StyledA to='/' onClick={ (e) => handleClick(e, navItem) }>
+            <StyledLink to='/' onClick={ (e) => onLinkClick(e, navItem) } $color={ color } >
               { navItem }
-            </StyledA>
+            </StyledLink>
           </NavListItemWrapper>
         )
       })}

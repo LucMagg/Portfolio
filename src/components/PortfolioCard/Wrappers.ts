@@ -55,7 +55,7 @@ export const DescriptionOnHover = styled.div`
 
 export const DescriptionWrapper = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100px;
   ${ FlexColumnCenter };
   align-items: flex-start;
   gap: 2px;
@@ -63,6 +63,7 @@ export const DescriptionWrapper = styled.div`
   padding: 5px;
 
   @media (min-width: ${ (props) => props.theme.tabletBreakpoint }px) {
+    height: 100%;
     align-items: center;
     gap: 20px;
     border-top: none;

@@ -2,11 +2,10 @@ import React, { useEffect, useState, useRef } from 'react'
 import { useTheme } from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
-import ThemeToggler from '../ThemeToggler/ThemeToggler'
-import LanguageToggler from '../LanguageToggler/LanguageToggler'
 import BackArrow from '../BackArrow/BackArrow'
+import NavMenu from '../NavMenu/NavMenu'
 
-import { StyledLi, StyledButton, MenuWrapper, MenuListWrapper, NavListItemWrapper, StyledA, TogglersWrapper } from './Wrappers'
+import { StyledLi, StyledButton, MenuWrapper, MenuListWrapper } from './Wrappers'
 import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 
@@ -17,8 +16,6 @@ export default function BurgerMenu ({ size }:{size : number }) {
   const menuRef = useRef<HTMLDivElement>(null)
 
   const { t } = useTranslation()
-  const navItems = t('navitems', { returnObjects: true }) as Record<string, string>
-
   const scrollNavigate = useScrollNavigate()
 
   const closeMenu = () => {
@@ -102,19 +99,7 @@ export default function BurgerMenu ({ size }:{size : number }) {
         <MenuWrapper className={ animationClass } ref={ menuRef }>
           <MenuListWrapper>
             <StyledLi><BackArrow onClick={ handleOpenCloseMenu } ariaLabel={ t('burgerMenu.close') } size={ 32 } color={ theme.mainBackGroundColor }/></StyledLi>
-            { Object.values(navItems).map((navItem) => {
-              return (
-                <NavListItemWrapper key={ navItem }>
-                  <StyledA to='/' onClick={ (e) => handleClick(e, navItem) }>
-                    { navItem }
-                  </StyledA>
-                </NavListItemWrapper>
-              )
-            })}
-            <TogglersWrapper>
-              <ThemeToggler width={ 67 } />
-              <LanguageToggler size={ 32 } />
-            </TogglersWrapper>    
+            <NavMenu onLinkClick= { handleClick } color={ theme.mainBackGroundColor } />
           </MenuListWrapper>  
         </MenuWrapper>
         )}
