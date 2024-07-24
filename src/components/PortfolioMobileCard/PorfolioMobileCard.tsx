@@ -4,7 +4,7 @@ import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 import { PortfolioCardWrapper, PortfolioCardLink, PortfolioCardPic, DescriptionWrapper, DescriptionTitle, DescriptionText, DescriptionStackWrapper, StackWrapper, LearnMore } from './Wrappers'
 import { PortfolioItemType } from '../../data/portfolio/portfolioTypes'
-import { contractStr } from '../../assets/utils'
+import { contractStr, getImagePath } from '../../assets/utils'
 
 type itemTypes = PortfolioItemType
 
@@ -20,8 +20,8 @@ export default function PortfolioMobileCard ( { item } : {item: itemTypes} ) {
 
   return (
     <PortfolioCardWrapper $isFocused={ isFocused }>
-      <PortfolioCardLink href={ `/projects/${contractStr(item.title)}` } onClick={ (e) => handleClick(e, `/projects/${contractStr(item.title)}`) } onFocus={ () => setIsFocused(true) } onBlur= { () => setIsFocused(false) }>
-          <PortfolioCardPic src={ `/images/${item.title}/${item.pics[0]}` } alt= { item.title } />
+      <PortfolioCardLink to={ `/projects/${contractStr(item.title)}` } onClick={ (e) => handleClick(e, `/projects/${contractStr(item.title)}`) } onFocus={ () => setIsFocused(true) } onBlur= { () => setIsFocused(false) }>
+          <PortfolioCardPic src={ getImagePath(`images/${item.title}/${item.pics[0]}`) } alt= { item.title } />
           <DescriptionWrapper>
             <DescriptionTitle>{ item.title }</DescriptionTitle>
             <DescriptionText>{ t(`portfolio.${item.id}.shortDescription`) }</DescriptionText>

@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 import * as Scroll from 'react-scroll'
+import { useScrollNavigate } from '../../hooks/useScrollNavigate'
 
 import FilterButton from '../../components/FilterButton/FilterButton'
 import Portfolio from '../../components/Portfolio/Portfolio'
 
 import { PortfolioPageWrapper, FilterWrapper } from './Wrappers'
-import { filterLoader, scrollToAnchor } from '../../assets/utils'
+import { filterLoader } from '../../assets/utils'
 
 
 export default function PortfolioPage() {
   const filters = filterLoader()
   const [activeFilter, setActiveFilter] = useState(filters[filters.length - 1])
+  const navigate = useScrollNavigate()
   
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter)
-    scrollToAnchor('top')
+    navigate('/Projects', 'top')
   }
 
   return (

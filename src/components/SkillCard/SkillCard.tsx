@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { getImagePath } from '../../assets/utils'
 import { StackCardsWrapper, StackTitle, SkillsWrapper, SkillCardWrapper, SkillCardPic } from './Wrappers'
 
 type skillsType = {
@@ -20,7 +21,7 @@ export default function SkillCard({ skills }: { skills: skillsType }){
         {skills.stacks.map((stack) => {
           return (
             <SkillCardWrapper key={ stack.name }>
-              <SkillCardPic src={ `/images/Skills/${stack.pic}` } alt={ stack.name }></SkillCardPic>
+              <SkillCardPic src={ getImagePath(`images/Skills/${stack.pic}`) } alt={ stack.name }></SkillCardPic>
             </SkillCardWrapper>
           )
         })}

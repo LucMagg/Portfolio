@@ -23,7 +23,7 @@ export default function NavMenu() {
       { Object.values(navItems).map((navItem) => {
         return (
           <NavListItemWrapper key={ navItem }>
-            <StyledA href='/' onClick={ (e) => handleClick(e, navItem) }>
+            <StyledA to='/' onClick={ (e) => handleClick(e, navItem) }>
               { navItem }
             </StyledA>
           </NavListItemWrapper>

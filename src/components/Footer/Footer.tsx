@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <StyledFooter ref={ footerRef }>
       <StyledSpan>{ t('footer.text1') }</StyledSpan>
-      <StyledA href="mailto:luc.maggiotto@gmail.com" onClick={ (e) => handleClick(e) } tabIndex={ -1 }>Luc Maggiotto</StyledA>
+      <StyledA to="mailto:luc.maggiotto@gmail.com" onClick={ (e) => handleClick(e) } tabIndex={ -1 }>Luc Maggiotto</StyledA>
       <StyledSpan>{ t('footer.text2') }</StyledSpan>
     </StyledFooter>
   )

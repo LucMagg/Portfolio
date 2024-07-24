@@ -10,6 +10,7 @@ import { PortfolioItemType } from '../../data/portfolio/portfolioTypes'
 import Carousel from '../../components/Carousel/Carousel'
 import { PageWrapper, StyledH2, ProjectDetailsWrapper, CarouselWrapper, SlideWrapper, PicWrapper, SlideIndex, DescriptionPartWrapper, StyledTitle, Description, LinksWrapper, StyledLi, StackWrapper, Stack, StyledLinkButton } from './Wrappers'
 import BackArrow from '../../components/BackArrow/BackArrow'
+import { getImagePath } from '../../assets/utils'
 
 
 type ChildrenSizeTypes = {
@@ -37,7 +38,7 @@ export default function PortfolioFocusPage() {
     return project.pics.map((pic, index) => {
       return (
         <SlideWrapper key={ pic }>
-          <PicWrapper src={ `/images/${ project.title }/${ pic }` } alt= { `${ project.title } ${ index }` } />
+          <PicWrapper src={ getImagePath(`images/${ project.title }/${ pic }`) } alt= { `${ project.title } ${ index }` } />
           <SlideIndex>
             { t(`portfolio.${ project.id }.pics_titles.${ index }`) }
             { project.pics.length > 1 ? ` - ${ index + 1 }/${ numberOfSlides }` : null }

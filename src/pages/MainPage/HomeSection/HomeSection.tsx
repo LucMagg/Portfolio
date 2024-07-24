@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
-import { scrollToAnchor, contractStr } from '../../../assets/utils'
+import { useScrollNavigate } from '../../../hooks/useScrollNavigate'
+import { contractStr, getImagePath } from '../../../assets/utils'
 import skillData from '../../../data/skills/skills.json'
 
 import SkillCard from '../../../components/SkillCard/SkillCard'
@@ -8,16 +9,17 @@ import { HomeSectionWrapper, TopWrapper, ImageWrapper, PrezWrapper, H2, Subtitle
 
 
 export default function HomeSection() {
+  const navigate = useScrollNavigate()
   const { t }  = useTranslation()
 
   const handleclick = () => {
-    scrollToAnchor(contractStr(t('navitems.nav3')))
+    navigate('/', contractStr(t('navitems.nav3')))
   }
 
   return (
     <HomeSectionWrapper>
       <TopWrapper>
-        <ImageWrapper src='/Me.jpg' alt={ t('section1.altphoto') }/>
+        <ImageWrapper src={ getImagePath('Me.jpg') } alt={ t('section1.altphoto') }/>
         <PrezWrapper>
           <H2>{ t('section1.title') }</H2>
           <Subtitle>{ t('section1.subtitle') }</Subtitle>

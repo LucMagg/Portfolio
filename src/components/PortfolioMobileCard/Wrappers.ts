@@ -19,7 +19,7 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   ${ ComponentsBackground };
 `
 
-export const PortfolioCardLink =  styled.a`
+export const PortfolioCardLink =  styled(Link)`
   ${ FlexColumnCenter };
   width: 100%;
   height: 100%;

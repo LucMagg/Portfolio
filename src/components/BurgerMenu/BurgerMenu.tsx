@@ -105,7 +105,7 @@ export default function BurgerMenu ({ size }:{size : number }) {
             { Object.values(navItems).map((navItem) => {
               return (
                 <NavListItemWrapper key={ navItem }>
-                  <StyledA href='/' onClick={ (e) => handleClick(e, navItem) }>
+                  <StyledA to='/' onClick={ (e) => handleClick(e, navItem) }>
                     { navItem }
                   </StyledA>
                 </NavListItemWrapper>

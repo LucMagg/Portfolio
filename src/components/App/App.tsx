@@ -43,7 +43,9 @@ export default function App() {
         }
       ]
     } 
-  ])
+  ], {
+    basename: '/Portfolio'
+  })
 
   return (
     <RouterProvider router={router} />

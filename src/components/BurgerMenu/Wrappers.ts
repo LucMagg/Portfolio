@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { FlexColumnCenter, Heading3, Focus } from '../../data/Theme/globalStyles'
 import { slideFromTopRightCorner, slideToTopRightCorner } from '../../assets/animations'
 
@@ -48,7 +49,7 @@ export const NavListItemWrapper = styled.li`
   width: fit-content;
 `
 
-export const StyledA = styled.a`
+export const StyledA = styled(Link)`
   height: 100%;
   width: 100%;
   text-decoration: none;

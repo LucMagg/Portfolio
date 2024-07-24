@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { infiniteScale } from '../../assets/animations'
 import { FlexRowCenter, Focus } from '../../data/Theme/globalStyles'
 
@@ -31,7 +32,7 @@ export const LogoWrapper = styled.li`
   }
 `
 
-export const LogoLink = styled.a`
+export const LogoLink = styled(Link)`
   height: 100%;
   width: 100%;
   text-decoration: none;

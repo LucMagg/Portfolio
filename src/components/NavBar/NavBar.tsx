@@ -38,7 +38,7 @@ export default function NavBar() {
     <NavWrapper>
       <LinkListWrapper>
         <LogoWrapper>
-          <LogoLink href='/' onClick={ (e) => handleClick(e, 'top') } aria-label={t('logo.alt')}>
+          <LogoLink to='/' onClick={ (e) => handleClick(e, 'top') } aria-label={t('logo.alt')}>
             <Logo size={ svgSize } />
           </LogoLink>
         </LogoWrapper>

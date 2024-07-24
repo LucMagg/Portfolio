@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { FlexColumnCenter, Focus, focusRingBorder } from '../../data/Theme/globalStyles'
+import { FlexColumnCenter, Focus } from '../../data/Theme/globalStyles'
 
 
 export const CarouselWrapper = styled.div`

@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { Heading3, Text, ComponentsBackground, FlexColumnCenter, FlexRowCenter } from '../../data/Theme/globalStyles'
 import { themeTypes } from '../../data/Theme/themes'
 
@@ -18,7 +19,7 @@ export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
   overflow: hidden;
 `
 
-export const PortfolioCardLink = styled.a`
+export const PortfolioCardLink = styled(Link)`
   display: block;
   width: 100%;
   height: 100%;

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
+import { getImagePath } from '../../../assets/utils'
 
 import { SectionWrapper, StyledImg, StyledLink } from './Wrappers'
 
@@ -8,8 +9,8 @@ export default function CVSection() {
 
   return (
     <SectionWrapper>
-      <StyledLink to='/CV_Luc_Maggiotto_Developpeur_Full-Stack.pdf' target='_blank' download>{t('section5.download')}</StyledLink>
-      <StyledImg src='/CV.JPG' alt={ t('navitems.nav4')}/>
+      <StyledLink to='CV_Luc_Maggiotto_Developpeur_Full-Stack.pdf' target='_blank' download>{t('section5.download')}</StyledLink>
+      <StyledImg src={ getImagePath('CV.JPG') } alt={ t('navitems.nav4')}/>
     </SectionWrapper>
   )
 }
