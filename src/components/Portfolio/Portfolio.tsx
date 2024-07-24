@@ -26,7 +26,7 @@ export default function Portfolio({ mainPage, filter }: { mainPage: boolean, fil
         if ((!mainPage && (item.type === filter || filter === 'all')) || (item.majorProject && mainPage))  {
           return (
             <PortfolioCardWrapper key={ item.title }>
-              <PortfolioCard item={ item } type={ width > commonTheme.tabletBreakpoint ? "desktop" : "mobile" } />
+              <PortfolioCard item={ item } type={ width >= commonTheme.tabletBreakpoint ? "desktop" : "mobile" } />
             </PortfolioCardWrapper>
           )
         }

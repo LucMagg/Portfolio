@@ -1,30 +1,24 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { Heading3, Text, ComponentsBackground, FlexColumnCenter, FlexRowCenter } from '../../data/Theme/globalStyles'
-import { themeTypes } from '../../data/Theme/themes'
 
 
-type PortfolioCardWrapperProps = {
-  $isFocused: boolean
-  theme: themeTypes
-}
-
-export const PortfolioCardWrapper = styled.div<PortfolioCardWrapperProps>`
+export const PortfolioCardLink = styled(Link)`
   width: 100%;
   max-width: 700px;
   height: 100%;
   position: relative;
-  border: ${ (props) => props.$isFocused ? '5px' : '3px'} solid ${(props) => props.$isFocused ? props.theme.focusRingColor : props.theme.componentsBorderColor };
   border-radius: 10px;
   overflow: hidden;
+  border: 3px solid ${ (props) => props.theme.componentsBorderColor };
   ${ ComponentsBackground };
-`
-
-export const PortfolioCardLink = styled(Link)`
   ${ FlexColumnCenter };
-  width: 100%;
-  height: 100%;
   text-decoration: none;
+
+  &:focus {
+    border: 5px solid ${ (props) => props.theme.focusRingColor };
+    outline: none;
+  }
 `
 
 export const PortfolioCardPic = styled.img`
@@ -48,7 +42,7 @@ export const DescriptionOnHover = styled.div`
   opacity: 0;
   transition: opacity 0.3s ease;
 
-  ${PortfolioCardWrapper}:hover & {
+  &:hover {
     opacity: 0.9;
   }
 `

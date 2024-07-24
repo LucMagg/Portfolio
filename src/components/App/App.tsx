@@ -44,7 +44,7 @@ export default function App() {
       ]
     } 
   ], {
-    basename: '/Portfolio'
+    basename: '/Portfolio/'
   })
 
   return (
