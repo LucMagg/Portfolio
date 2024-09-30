@@ -15,7 +15,7 @@ export default function ContactSection() {
     <ContactSectionWrapper>
       <ContactText>
         <SomeText>{ t('section4.text1') }</SomeText>
-        <LinkedInLink href='https://www.linkedin.com/in/luc-maggiotto-357159316' target='_blank' rel='noreferrer noopener' aria-label='LinkedIn'>
+        <LinkedInLink href='https://www.linkedin.com/in/luc-maggiotto' target='_blank' rel='noreferrer noopener' aria-label='LinkedIn'>
           <LinkedInSvg size={ 60 }/>
         </LinkedInLink>
         <SomeText>{ t('section4.text2') }</SomeText>
